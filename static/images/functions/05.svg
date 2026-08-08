@@ -1,0 +1,48 @@
+<svg width="390" height="360" viewBox="0 0 390 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="390" height="360" fill="white"/>
+<rect x="55" y="47" width="102" height="135" rx="2.43709" fill="#DFDFDF"/>
+<rect x="276" y="80" width="102" height="135" rx="2.43709" fill="#DFDFDF"/>
+<rect x="24" y="16" width="120.997" height="155.829" rx="2.43709" fill="#6B6B6B"/>
+<rect x="245" y="49" width="120.997" height="155.829" rx="2.43709" fill="#7FA3E2"/>
+<rect x="53.668" y="30.3027" width="78.4075" height="7.94671" fill="white"/>
+<rect x="53.668" y="115.068" width="78.4075" height="7.94671" fill="white"/>
+<rect x="37.2446" y="30.3027" width="9.00627" height="7.94671" fill="white"/>
+<rect x="37.2446" y="115.068" width="9.00627" height="7.94671" fill="white"/>
+<rect x="37.2446" y="47.2559" width="9.00627" height="7.94671" fill="white"/>
+<rect x="37" y="133" width="95" height="22" fill="white"/>
+<rect x="37.2446" y="64.7383" width="9.00627" height="7.94671" fill="white"/>
+<rect x="37.2446" y="81.1621" width="9.00627" height="7.94671" fill="white"/>
+<rect x="37.2446" y="98.6445" width="9.00627" height="7.94671" fill="white"/>
+<rect x="53.668" y="47.2559" width="78.4075" height="7.94671" fill="white"/>
+<rect x="53.668" y="64.7383" width="78.4075" height="7.94671" fill="white"/>
+<rect x="53.668" y="81.1621" width="78.4075" height="7.94671" fill="white"/>
+<rect x="53.668" y="98.6445" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="63.3027" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="148.068" width="78.4075" height="7.94671" fill="white"/>
+<rect x="258.245" y="63.3027" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="148.068" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="80.2559" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="165.551" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="97.7383" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="182.504" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="114.162" width="9.00627" height="7.94671" fill="white"/>
+<rect x="258.245" y="131.645" width="9.00627" height="7.94671" fill="white"/>
+<rect x="274.668" y="80.2559" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="165.551" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="97.7383" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="182.504" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="114.162" width="78.4075" height="7.94671" fill="white"/>
+<rect x="274.668" y="131.645" width="78.4075" height="7.94671" fill="white"/>
+<path d="M151.721 317.5C151.721 292.923 171.645 273 196.221 273C220.798 273 240.721 292.923 240.721 317.5V345H151.721V317.5Z" fill="#286EE6"/>
+<circle cx="196.221" cy="253.5" r="28" fill="#286EE6" stroke="white" stroke-width="5"/>
+<path d="M243.721 332.501L242.052 335.838C239.928 340.086 236.131 343.259 231.573 344.594V344.594C230.013 345.051 228.395 345.283 226.769 345.283L183.979 345.283C177.842 345.283 172.699 340.641 172.073 334.536V334.536C171.35 327.48 176.886 321.347 183.979 321.347L208.089 321.347C213.818 321.347 218.089 316.064 216.889 310.462L215.221 302.673" stroke="white" stroke-width="3"/>
+<rect x="184.936" y="273.071" width="24.2202" height="70.5128" rx="12.1101" transform="rotate(32.4794 184.936 273.071)" fill="#286EE6" stroke="white" stroke-width="3"/>
+<path d="M241.221 339H244.721L243.221 350.5H231.221L228.721 347.5L241.221 339Z" fill="white"/>
+<path d="M157.721 340.5L150.721 332.5L149.221 348.5L180.721 346.5L172.221 339L164.721 340.5H157.721Z" fill="white"/>
+<circle cx="81.5" cy="205.5" r="9.5" fill="#DFDFDF"/>
+<circle cx="100.5" cy="235.5" r="9.5" fill="#DFDFDF"/>
+<circle cx="130.5" cy="254.5" r="9.5" fill="#DFDFDF"/>
+<circle cx="9.5" cy="9.5" r="9.5" transform="matrix(-1 0 0 1 324 229)" fill="#DFDFDF"/>
+<circle cx="9.5" cy="9.5" r="9.5" transform="matrix(-1 0 0 1 305 259)" fill="#DFDFDF"/>
+<circle cx="9.5" cy="9.5" r="9.5" transform="matrix(-1 0 0 1 275 278)" fill="#DFDFDF"/>
+</svg>
