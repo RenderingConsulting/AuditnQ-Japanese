@@ -1,30 +1,30 @@
 {{ define "main" }}
 {{ $site := .Site.Data.site }}
 
-<section class="hero hero--compact">
-  <div class="wrap hero__inner">
-    <p class="eyebrow eyebrow--light">Services</p>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brand"><span class="eyebrow__dot" aria-hidden="true"></span>Services</p>
     <h1>AuditnQをもっと詳しく</h1>
-    <p class="hero__lede">具体的な業務フローやお役立ち機能をご紹介します。委託先の初回選定から定期監査、リスク分析まで、一連の業務と情報を一元管理し、グループ全体のサイバーリスクを低減します。</p>
+    <p class="lede">具体的な業務フローやお役立ち機能をご紹介します。委託先の初回選定から定期監査、リスク分析まで、一連の業務と情報を一元管理し、グループ全体のサイバーリスクを低減します。</p>
   </div>
 </section>
 
-<section class="section section--muted" id="workflow">
+<section class="section" id="workflow">
   <div class="wrap">
-    <header class="section-head">
-      <p class="eyebrow">Workflow</p>
+    <header class="section-head section-center">
+      <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Workflow</p>
       <h2>基本的な業務フロー</h2>
     </header>
-    <div class="workflow-list">
+    <div class="timeline">
       {{ range $site.workflow }}
-      <article class="workflow reveal">
-        <div class="workflow__media">
-          <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
-        </div>
-        <div class="workflow__copy">
-          <p class="feature__num">{{ .id }}</p>
+      <article class="timeline__item">
+        <div class="timeline__copy">
+          <span class="timeline__num">{{ .id }}</span>
           <h3>{{ .title }}</h3>
           <p>{{ .body }}</p>
+        </div>
+        <div class="timeline__media">
+          <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
         </div>
       </article>
       {{ end }}
@@ -33,58 +33,63 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section--muted">
   <div class="wrap download-strip">
     <div class="download-strip__media">
       <img src="{{ "/images/cta/download.webp" | relURL }}" alt="" width="480" height="252" loading="lazy">
     </div>
     <div>
-      <p class="eyebrow">Download</p>
       <h2>資料ダウンロード</h2>
       <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます</p>
-      <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード</a>
+      <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード</a>
     </div>
   </div>
 </section>
 
-<section class="section section--muted" id="function">
+<section class="section" id="function">
   <div class="wrap">
     <header class="section-head">
-      <p class="eyebrow">Functions</p>
+      <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Functions</p>
       <h2>機能一覧</h2>
       <p>課題解決を支援する豊富な機能をご紹介</p>
     </header>
-    <nav class="function-toc" aria-label="機能アンカー">
-      {{ range $site.functions }}
-      <a href="#{{ .id }}">{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</a>
-      {{ end }}
-    </nav>
-    <div class="function-detail-list">
-      {{ range $site.functions }}
-      <article class="function-detail reveal" id="{{ .id }}">
-        {{ with .icon }}
-        <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="96" height="88" loading="lazy">
+    <div class="function-layout">
+      <nav class="function-side" aria-label="機能一覧">
+        {{ range $site.functions }}
+        <a href="#{{ .id }}">{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</a>
         {{ end }}
-        <div>
-          <h3>{{ .title }}</h3>
-          <p>{{ .body }}</p>
-        </div>
-      </article>
-      {{ end }}
+      </nav>
+      <div class="function-detail-list">
+        {{ range $site.functions }}
+        <article class="function-detail" id="{{ .id }}">
+          {{ with .icon }}
+          <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="96" height="88" loading="lazy">
+          {{ end }}
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .body }}</p>
+          </div>
+        </article>
+        {{ end }}
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="faq">
-  <div class="wrap narrow">
-    <header class="section-head">
-      <p class="eyebrow">Faq</p>
+<section class="section section--muted" id="faq">
+  <div class="wrap split-section">
+    <header class="split-section__head">
+      <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>FAQ</p>
       <h2>よくある質問</h2>
     </header>
-    <div class="faq-list">
+    <div class="faq-panel">
       {{ range $i, $item := $site.faq }}
       <details class="faq">
-        <summary><span>{{ printf "%02d." (add $i 1) }}</span> {{ .q }}</summary>
+        <summary>
+          <span class="faq__num">{{ printf "%02d." (add $i 1) }}</span>
+          <span class="faq__q">{{ .q }}</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </summary>
         <p>{{ .a }}</p>
       </details>
       {{ end }}
@@ -92,21 +97,25 @@
   </div>
 </section>
 
-<section class="section section--muted" id="blog">
+<section class="section" id="blog">
   <div class="wrap">
-    <header class="section-head">
-      <p class="eyebrow">Blog</p>
+    <header class="section-head section-center">
+      <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Blog</p>
       <h2>コラム</h2>
+      <p>課題解決を支援する豊富な機能をご紹介</p>
     </header>
-    <div class="card-list card-list--media">
+    <div class="blog-grid">
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-      <a class="card-link card-link--media" href="{{ .RelPermalink }}">
-        {{ with .Params.cover }}
-        <img src="{{ . }}" alt="" width="640" height="336" loading="lazy">
+      <a class="blog-card" href="{{ .RelPermalink }}">
+        {{ with .Params.coverLocal }}
+        <img src="{{ . | relURL }}" alt="" width="640" height="336" loading="lazy">
+        {{ else }}
+          {{ with .Params.cover }}<img src="{{ . }}" alt="" width="640" height="336" loading="lazy">{{ end }}
         {{ end }}
-        <div>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+        <div class="blog-card__body">
+          <span class="blog-card__tag">{{ with .Params.category }}{{ . }}{{ else }}記事掲載{{ end }}</span>
           <h3>{{ .Title }}</h3>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
         </div>
       </a>
       {{ end }}
@@ -117,14 +126,14 @@
 
 {{ partial "cta-band.html" . }}
 
-<section class="section" id="contact">
+<section class="section section--muted" id="contact">
   <div class="wrap contact-band">
     <div>
-      <p class="eyebrow">Contact</p>
+      <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Contact</p>
       <h2>お問い合わせ</h2>
       <p>見積もりを依頼したい、製品デモを見たいなどのご用件はぜひ気軽にお問い合わせください。</p>
     </div>
-    <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformInquiry }}" rel="noopener noreferrer" target="_blank">お問い合わせはこちら</a>
+    <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformInquiry }}" rel="noopener noreferrer" target="_blank">お問い合わせはこちら</a>
   </div>
 </section>
 {{ end }}
