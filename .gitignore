@@ -27,3 +27,7 @@ docs/_inventory/studio-*.json
 .env
 .env.local
 *.log
+
+# Local capture artifacts
+phase2-*.png
+studio-*.png

@@ -3,16 +3,26 @@
     <p class="cta-band__lead">AuditnQに少しでもご興味がございましたらお気軽にお問い合わせください</p>
     <div class="cta-band__grid">
       <article class="cta-card">
-        <p class="eyebrow">Download</p>
-        <h2>お役立ち資料</h2>
-        <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます。</p>
-        <a class="btn btn--cta" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
+        <div class="cta-card__media">
+          <img src="{{ "/images/cta/download.webp" | relURL }}" alt="" width="600" height="315" loading="lazy">
+        </div>
+        <div class="cta-card__body">
+          <p class="eyebrow">Download</p>
+          <h2>お役立ち資料</h2>
+          <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます。</p>
+          <a class="btn btn--cta" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
+        </div>
       </article>
       <article class="cta-card">
-        <p class="eyebrow">Webinar</p>
-        <h2>ウェビナー</h2>
-        <p>サービス概要や実際の画面についてご説明します。ご質問も可能なので是非ご参加ください。</p>
-        <a class="btn btn--ghost" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
+        <div class="cta-card__media cta-card__media--webinar" aria-hidden="true">
+          <span class="cta-card__icon">▶</span>
+        </div>
+        <div class="cta-card__body">
+          <p class="eyebrow">Webinar</p>
+          <h2>ウェビナー</h2>
+          <p>サービス概要や実際の画面についてご説明します。ご質問も可能なので是非ご参加ください。</p>
+          <a class="btn btn--outline-light" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
+        </div>
       </article>
     </div>
   </div>

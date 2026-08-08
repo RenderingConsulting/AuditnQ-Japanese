@@ -2,10 +2,10 @@
 {{ $site := .Site.Data.site }}
 
 <section class="hero hero--compact">
-  <div class="wrap">
-    <p class="eyebrow">Services</p>
+  <div class="wrap hero__inner">
+    <p class="eyebrow eyebrow--light">Services</p>
     <h1>AuditnQをもっと詳しく</h1>
-    <p class="lede">具体的な業務フローやお役立ち機能をご紹介します。委託先の初回選定から定期監査、リスク分析まで、一連の業務と情報を一元管理し、グループ全体のサイバーリスクを低減します。</p>
+    <p class="hero__lede">具体的な業務フローやお役立ち機能をご紹介します。委託先の初回選定から定期監査、リスク分析まで、一連の業務と情報を一元管理し、グループ全体のサイバーリスクを低減します。</p>
   </div>
 </section>
 
@@ -15,12 +15,17 @@
       <p class="eyebrow">Workflow</p>
       <h2>基本的な業務フロー</h2>
     </header>
-    <div class="feature-grid">
+    <div class="workflow-list">
       {{ range $site.workflow }}
-      <article class="feature">
-        <p class="feature__num">{{ .id }}</p>
-        <h3>{{ .title }}</h3>
-        <p>{{ .body }}</p>
+      <article class="workflow reveal">
+        <div class="workflow__media">
+          <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
+        </div>
+        <div class="workflow__copy">
+          <p class="feature__num">{{ .id }}</p>
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </div>
       </article>
       {{ end }}
     </div>
@@ -30,12 +35,15 @@
 
 <section class="section">
   <div class="wrap download-strip">
+    <div class="download-strip__media">
+      <img src="{{ "/images/cta/download.webp" | relURL }}" alt="" width="480" height="252" loading="lazy">
+    </div>
     <div>
       <p class="eyebrow">Download</p>
       <h2>資料ダウンロード</h2>
       <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます</p>
+      <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード</a>
     </div>
-    <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード</a>
   </div>
 </section>
 
@@ -53,9 +61,14 @@
     </nav>
     <div class="function-detail-list">
       {{ range $site.functions }}
-      <article class="function-detail" id="{{ .id }}">
-        <h3>{{ .title }}</h3>
-        <p>{{ .body }}</p>
+      <article class="function-detail reveal" id="{{ .id }}">
+        {{ with .icon }}
+        <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="96" height="88" loading="lazy">
+        {{ end }}
+        <div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </div>
       </article>
       {{ end }}
     </div>
@@ -85,11 +98,16 @@
       <p class="eyebrow">Blog</p>
       <h2>コラム</h2>
     </header>
-    <div class="card-list">
+    <div class="card-list card-list--media">
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-      <a class="card-link" href="{{ .RelPermalink }}">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
-        <h3>{{ .Title }}</h3>
+      <a class="card-link card-link--media" href="{{ .RelPermalink }}">
+        {{ with .Params.cover }}
+        <img src="{{ . }}" alt="" width="640" height="336" loading="lazy">
+        {{ end }}
+        <div>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+          <h3>{{ .Title }}</h3>
+        </div>
       </a>
       {{ end }}
     </div>
