@@ -1,0 +1,29 @@
+# Hugo
+public/
+resources/
+.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Playwright / local captures
+.playwright-mcp/
+test-results/
+playwright-report/
+
+# Raw crawl dumps (keep curated docs only)
+docs/_inventory/*.html
+docs/_inventory/symbols/
+docs/_inventory/studio-*.json
+
+# Env
+.env
+.env.local
+*.log
