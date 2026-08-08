@@ -18,7 +18,7 @@
 | 0 | コンテンツ棚卸し | ✅ |
 | 1 | Hugo skeleton / CI | ✅ |
 | 2 | `/`・`/service` 見た目踏襲 | ✅ |
-| 3 | blog / news 移行 | 予定 |
+| 3 | blog / news 移行・体裁 | ✅（体裁） / 内容は継続 |
 | 4 | Paperform / GA / GTM / HubSpot | 予定 |
 | 5 | SEO・DNS カットオーバー | 予定 |
 

@@ -13,8 +13,8 @@
       {{ range .Site.Menus.main }}
       <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}
-      <a class="btn btn--cta btn--sm" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
-      <a class="btn btn--outline btn--sm" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナー予約</a>
+      <a class="btn btn--primary btn--sm" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
+      <a class="btn btn--cta btn--sm" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナー予約</a>
     </nav>
   </div>
 </header>
