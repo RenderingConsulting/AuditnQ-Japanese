@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+    <div class="site-shell">
+      {{ partial "header.html" . }}
+      <main id="main">
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ partial "footer.html" . }}
+    </div>
+    {{ partial "analytics.html" . }}
+  </body>
+</html>

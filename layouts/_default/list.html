@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="section">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">{{ .Section | title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}
+    </header>
+    <div class="card-list">
+      {{ range .Pages }}
+      <a class="card-link" href="{{ .RelPermalink }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+        <h2>{{ .Title }}</h2>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

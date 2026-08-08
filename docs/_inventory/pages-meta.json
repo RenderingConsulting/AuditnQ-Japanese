@@ -1,0 +1,170 @@
+[
+  {
+    "id": "/",
+    "type": "page",
+    "uuid": "bf9fed39-ac7e-4c42-aa12-40d655a39612",
+    "title": "AuditnQ｜委託先管理/セキュリティチェックや定期監査を効率化し、企業単体とサプライチェーン全体のリスクを低減するクラウドシステムです。",
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "2e4e8830-3361-48a8-9715-e82ffcd5e854",
+      "faf62cb9-37e0-4205-b7a5-3a51b3e15da2",
+      "d3b49d89-3fe3-4302-ad09-0b3797c31c9a",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "6b2649c4-bbb0-4748-9dbe-a0a5886b6f42",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "service",
+    "type": "page",
+    "uuid": "3bf8accd-d9d7-4d59-845f-486926abc2a9",
+    "title": "",
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "ab148d68-45e0-4dad-aceb-762b9c974d9f",
+      "faf62cb9-37e0-4205-b7a5-3a51b3e15da2",
+      "d3b49d89-3fe3-4302-ad09-0b3797c31c9a",
+      "b1aadf34-c495-4e23-98fd-132762394ada",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "news/:slug",
+    "type": "page",
+    "uuid": "8eafc26a-39fc-4dcd-8c22-bba3f1913a01",
+    "title": "AuditnQ | {{title}} ",
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "blog/all",
+    "type": "page",
+    "uuid": "7748854c-23e6-46c2-9392-ad7517e2bd0b",
+    "title": "",
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "ab148d68-45e0-4dad-aceb-762b9c974d9f",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "blog/tag/:slug",
+    "type": "page",
+    "uuid": "66f50fe4-42c0-4eb9-b98e-0615d8bba130",
+    "title": null,
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "ab148d68-45e0-4dad-aceb-762b9c974d9f",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "blog/:slug",
+    "type": "page",
+    "uuid": "44b9ad31-fe18-4472-8c20-1b45a471b27a",
+    "title": "AuditnQ | {{title}} ",
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "announce/:slug",
+    "type": "page",
+    "uuid": "a02c1318-459b-4201-85b0-363b1e55e6b6",
+    "title": null,
+    "robots": null,
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "37264b2b-d6be-4636-bc70-dd72302e362a",
+      "dbec28fb-5d8f-4c95-9164-a9be831bd2c8",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "menu",
+    "type": "modal",
+    "uuid": "52e20972-08fa-4473-8df7-f7aa146b9707",
+    "title": null,
+    "robots": null,
+    "symbolIds": []
+  },
+  {
+    "id": "404",
+    "type": "page",
+    "uuid": "e688a907-c69d-44d3-9a41-d8964ea36784",
+    "title": "",
+    "robots": "noindex",
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "d6a0ed13-6128-4d1b-833a-c006113fd348",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "webinar-thanks",
+    "type": "page",
+    "uuid": "88f3e76e-69a7-49af-9b93-6b19d21dc5fa",
+    "title": "",
+    "robots": "noindex",
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "inquiry-thanks",
+    "type": "page",
+    "uuid": "0fae6c2c-4f6d-4a49-886b-162c1e4a8815",
+    "title": "",
+    "robots": "noindex",
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  },
+  {
+    "id": "dl-thanks",
+    "type": "page",
+    "uuid": "15fa57dd-ae39-46e4-9cbe-054a3904d86f",
+    "title": "",
+    "robots": "noindex",
+    "symbolIds": [
+      "41db012f-1861-4250-990b-5f0ef10f7d7b",
+      "330ee551-a0ca-4fae-97cd-580eb7d199ff",
+      "3f9dd6d5-8d2f-4240-b54e-62c84eb46675"
+    ]
+  }
+]

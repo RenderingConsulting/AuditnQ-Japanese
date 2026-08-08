@@ -1,0 +1,112 @@
+{{ define "main" }}
+{{ $site := .Site.Data.site }}
+
+<section class="hero hero--compact">
+  <div class="wrap">
+    <p class="eyebrow">Services</p>
+    <h1>AuditnQをもっと詳しく</h1>
+    <p class="lede">具体的な業務フローやお役立ち機能をご紹介します。委託先の初回選定から定期監査、リスク分析まで、一連の業務と情報を一元管理し、グループ全体のサイバーリスクを低減します。</p>
+  </div>
+</section>
+
+<section class="section section--muted" id="workflow">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Workflow</p>
+      <h2>基本的な業務フロー</h2>
+    </header>
+    <div class="feature-grid">
+      {{ range $site.workflow }}
+      <article class="feature">
+        <p class="feature__num">{{ .id }}</p>
+        <h3>{{ .title }}</h3>
+        <p>{{ .body }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <p class="section-note">自社のみならず顧客も含めたサプライチェーン全体のリスクを低減します</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap download-strip">
+    <div>
+      <p class="eyebrow">Download</p>
+      <h2>資料ダウンロード</h2>
+      <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます</p>
+    </div>
+    <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード</a>
+  </div>
+</section>
+
+<section class="section section--muted" id="function">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Functions</p>
+      <h2>機能一覧</h2>
+      <p>課題解決を支援する豊富な機能をご紹介</p>
+    </header>
+    <nav class="function-toc" aria-label="機能アンカー">
+      {{ range $site.functions }}
+      <a href="#{{ .id }}">{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</a>
+      {{ end }}
+    </nav>
+    <div class="function-detail-list">
+      {{ range $site.functions }}
+      <article class="function-detail" id="{{ .id }}">
+        <h3>{{ .title }}</h3>
+        <p>{{ .body }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <header class="section-head">
+      <p class="eyebrow">Faq</p>
+      <h2>よくある質問</h2>
+    </header>
+    <div class="faq-list">
+      {{ range $i, $item := $site.faq }}
+      <details class="faq">
+        <summary><span>{{ printf "%02d." (add $i 1) }}</span> {{ .q }}</summary>
+        <p>{{ .a }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted" id="blog">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Blog</p>
+      <h2>コラム</h2>
+    </header>
+    <div class="card-list">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      <a class="card-link" href="{{ .RelPermalink }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+        <h3>{{ .Title }}</h3>
+      </a>
+      {{ end }}
+    </div>
+    <p class="section-cta"><a class="text-link" href="{{ "/blog/" | relURL }}">Blog 一覧 →</a></p>
+  </div>
+</section>
+
+{{ partial "cta-band.html" . }}
+
+<section class="section" id="contact">
+  <div class="wrap contact-band">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>お問い合わせ</h2>
+      <p>見積もりを依頼したい、製品デモを見たいなどのご用件はぜひ気軽にお問い合わせください。</p>
+    </div>
+    <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformInquiry }}" rel="noopener noreferrer" target="_blank">お問い合わせはこちら</a>
+  </div>
+</section>
+{{ end }}

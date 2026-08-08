@@ -1,0 +1,121 @@
+{{ define "main" }}
+{{ $site := .Site.Data.site }}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="hero__kicker">委託先/再委託先を一元管理して可視化</p>
+      <h1>{{ .Site.Params.productNameKana }}</h1>
+      <p class="hero__lede">企業全体のサプライチェーンリスクを低減</p>
+      <div class="hero__actions">
+        <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
+        <a class="btn btn--ghost btn--lg" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <img src="{{ "/images/og-default.png" | relURL }}" alt="" width="1200" height="630">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap narrow">
+    <p class="eyebrow">About</p>
+    <h2>サイバー攻撃が日常の時代にサプライチェーン全体を守るには</h2>
+    <p class="lede">AuditnQは、委託先企業及び再委託先以降（Nth Party）の企業情報を一元管理し、可視化する委託先管理システム（TPRM / Third Party Risk Management）です。企業選定時から管理を始め、セキュリティチェックや外部情報等で評価し、定期監査業務を継続的に支援することで、企業グループ全体のサプライチェーンリスクを低減します。既存のExcel（エクセル）資産も活用可能で、既存の業務フローへの影響を抑え、現実的で確実な運用を実現します。</p>
+  </div>
+</section>
+
+<section class="section section--muted" id="features">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Features</p>
+      <h2>AuditnQにできること</h2>
+      <p>AuditnQの概要と特長</p>
+    </header>
+    <div class="feature-grid">
+      {{ range $site.features }}
+      <article class="feature">
+        <p class="feature__num">{{ .id }}</p>
+        <h3>{{ .title }}</h3>
+        <p>{{ .body }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <p class="section-cta"><a class="text-link" href="{{ "/service/" | relURL }}">詳しくみる →</a></p>
+  </div>
+</section>
+
+<section class="section" id="functions">
+  <div class="wrap">
+    <header class="section-head section-head--row">
+      <div>
+        <p class="eyebrow">Functions</p>
+        <h2>機能一覧</h2>
+        <p>課題解決を支援する豊富な機能</p>
+      </div>
+      <a class="text-link" href="{{ "/service/#function" | relURL }}">一覧はこちら →</a>
+    </header>
+    <div class="function-grid">
+      {{ range $i, $id := $site.home_functions }}
+        {{ range $site.functions }}
+          {{ if eq .id $id }}
+          <a class="function-card" href="{{ printf "/service/#%s" .id | relURL }}">
+            <span class="function-card__num">{{ add $i 1 }}</span>
+            <h3>{{ .title }}</h3>
+            <span class="text-link">Learn more →</span>
+          </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted" id="news">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">News</p>
+      <h2>お知らせ</h2>
+    </header>
+    <div class="card-list">
+      {{ range first 5 (where .Site.RegularPages "Section" "news") }}
+      <a class="card-link" href="{{ .RelPermalink }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+        <h3>{{ .Title }}</h3>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <header class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>よくあるご質問</h2>
+    </header>
+    <div class="faq-list">
+      {{ range $i, $item := $site.faq }}
+      <details class="faq" {{ if eq $i 0 }}open{{ end }}>
+        <summary><span>{{ printf "%02d." (add $i 1) }}</span> {{ .q }}</summary>
+        <p>{{ .a }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "cta-band.html" . }}
+
+<section class="section section--muted" id="contact">
+  <div class="wrap contact-band">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>お問い合わせ</h2>
+      <p>サービスに関する詳細なご質問や見積もり作成のご依頼、その他のご要望については、こちらから気軽にお問い合わせください</p>
+    </div>
+    <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformInquiry }}" rel="noopener noreferrer" target="_blank">お問い合わせはこちら</a>
+  </div>
+</section>
+{{ end }}

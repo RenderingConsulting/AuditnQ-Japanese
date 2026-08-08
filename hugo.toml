@@ -1,0 +1,58 @@
+baseURL = "https://q.auditnqa.com/"
+languageCode = "ja"
+title = "AuditnQ"
+defaultContentLanguage = "ja"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+disablePathToLower = true
+canonifyURLs = false
+
+[params]
+  description = "既存のExcel（エクセル）資産を活用できるクラウドシステムで、セキュリティチェック / 委託先管理チェックの回答をデータベースに一元管理し、委託先同士や過去回答との比較を簡単に実践できます。利用審査時の委託先の選定や定期監査を効率化することで、企業単体のリスク低減だけでなく、関連会社をモニタリングすることで、サプライチェーン攻撃のリスクも低減します。"
+  productName = "AuditnQ"
+  productNameKana = "オーディトンキュー"
+  tagline = "委託先/再委託先のリスク管理を実現します。"
+  companyName = "RenderingConsulting株式会社"
+  companyNameEn = "RenderingConsulting Inc."
+  contactEmail = "support@ren-con.jp"
+  companyURL = "https://ren-con.jp/#company"
+  privacyURL = "https://ren-con.jp/privacy-policy-jp"
+  ogImage = "/images/og-default.png"
+  favicon = "/images/favicon.png"
+  # Integrations (Phase 4 で有効化確認)
+  googleAnalytics = "G-2Q1QNWF0R0"
+  googleTagManager = "GTM-NPD8FMJS"
+  hubspotPortalId = "241956367"
+  paperformDownload = "https://auditnq-dl-lp-202503.paperform.co"
+  paperformWebinar = "https://webinar-202410.paperform.co"
+  paperformInquiry = "https://auditnq-inquiry-lp-202503.paperform.co"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[menu]
+  [[menu.main]]
+    name = "できること"
+    url = "/#features"
+    weight = 10
+  [[menu.main]]
+    name = "機能一覧"
+    url = "/service/#function"
+    weight = 20
+  [[menu.main]]
+    name = "お知らせ"
+    url = "/#news"
+    weight = 30
+  [[menu.main]]
+    name = "よくある質問"
+    url = "/#faq"
+    weight = 40
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 50

@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := cond .IsHome (printf "%s｜%s" .Site.Title .Title) (printf "%s｜%s" .Site.Title .Title) }}
+{{ if .IsHome }}
+<title>{{ .Title }}</title>
+{{ else }}
+<title>{{ .Title }}｜{{ .Site.Title }}</title>
+{{ end }}
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ if .Params.robots }}
+<meta name="robots" content="{{ .Params.robots }}">
+{{ end }}
+
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}｜{{ .Site.Params.tagline }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}｜{{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Site.Params.ogImage }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+{{ with .Site.Params.ogImage }}
+<meta name="twitter:image" content="{{ . | absURL }}">
+{{ end }}
+
+<link rel="icon" type="image/png" href="{{ .Site.Params.favicon | relURL }}">
+<link rel="apple-touch-icon" href="{{ .Site.Params.favicon | relURL }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Red+Hat+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+{{ with resources.Get "css/main.css" }}
+  {{ $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+
+{{ partial "schema.html" . }}
