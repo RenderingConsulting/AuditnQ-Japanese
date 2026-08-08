@@ -1,0 +1,19 @@
+{{ if .Site.Params.googleTagManager }}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ .Site.Params.googleTagManager }}');</script>
+{{ end }}
+{{ if and .Site.Params.googleAnalytics (not .Site.Params.googleTagManager) }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Params.googleAnalytics }}');
+</script>
+{{ end }}
+{{ with .Site.Params.hubspotPortalId }}
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/{{ . }}.js"></script>
+{{ end }}

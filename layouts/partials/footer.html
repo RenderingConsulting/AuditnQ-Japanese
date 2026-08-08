@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="brand" href="{{ "/" | relURL }}">
+        <img class="brand__mark" src="{{ .Site.Params.favicon | relURL }}" width="28" height="28" alt="">
+        <span>{{ .Site.Params.productName }}</span>
+      </a>
+      <p>{{ .Site.Params.productName }}（オーディトン キュー）は、委託先/再委託先（Nth Party）を一元化、企業集中リスクや地域リスクを可視化して、サプライチェーン全体のリスク管理を実現する委託先管理システムです。</p>
+    </div>
+    <nav class="footer-nav" aria-label="フッター">
+      <a href="{{ .Site.Params.companyURL }}" rel="noopener noreferrer">運営会社</a>
+      <a href="{{ .Site.Params.privacyURL }}" rel="noopener noreferrer">プライバシーポリシー</a>
+      <a href="{{ "/blog/" | relURL }}">Blog</a>
+      <a href="{{ "/service/" | relURL }}">機能一覧</a>
+    </nav>
+  </div>
+  <p class="site-footer__copy wrap">© {{ now.Year }} {{ .Site.Params.companyNameEn }}. All rights reserved</p>
+</footer>
