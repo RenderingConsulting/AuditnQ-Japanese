@@ -1,0 +1,170 @@
+{
+  "url": "https://q.auditnqa.com/",
+  "host": "Cloudflare Pages (after mobile srcset + carousel aspect-ratio)",
+  "measuredAt": "2026-08-10",
+  "timezone": "Asia/Tokyo",
+  "window": "14:38–14:40 JST",
+  "tool": "PageSpeed Insights",
+  "lighthouseVersion": "13.4.1",
+  "method": "median of 3 successful paired lab runs (mobile+desktop both OK)",
+  "fieldData": null,
+  "changesSincePriorOptimized": [
+    "Hero logo srcset (logo-sm 591w / logo 1093w)",
+    "Carousel 720w WebP variants + srcset/sizes",
+    "LCP preload imagesrcset",
+    "carousel__viewport aspect-ratio 1106/652 for CLS"
+  ],
+  "delivery": {
+    "server": "cloudflare",
+    "dnsCname": "auditnq-japanese.pages.dev",
+    "cacheControl": "public, max-age=0, must-revalidate",
+    "htmlBytesApprox": 25887,
+    "hasNuxtData": false,
+    "htmlContainsBodyCopy": true
+  },
+  "median": {
+    "mobile": {
+      "performance": 92,
+      "accessibility": 92,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 2.6,
+      "lcpSeconds": 2.6,
+      "tbtMs": 0,
+      "cls": 0.067,
+      "speedIndexSeconds": 2.6,
+      "agentBrowsing": "2/2"
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 96,
+      "bestPractices": 92,
+      "seo": 100,
+      "fcpSeconds": 0.4,
+      "lcpSeconds": 0.4,
+      "tbtMs": 0,
+      "cls": 0.008,
+      "speedIndexSeconds": 0.4,
+      "agentBrowsing": "2/2"
+    }
+  },
+  "runs": [
+    {
+      "id": "pbv9fhjh49",
+      "createdAt": "2026-08-10T14:38:46+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/pbv9fhjh49",
+      "mobile": {
+        "performance": 93,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 2.6,
+        "lcpSeconds": 2.6,
+        "tbtMs": 0,
+        "cls": 0.001,
+        "speedIndexSeconds": 2.6,
+        "agentBrowsing": "2/2"
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 0.7,
+        "lcpSeconds": 0.7,
+        "tbtMs": 0,
+        "cls": 0.004,
+        "speedIndexSeconds": 0.7,
+        "agentBrowsing": "2/2"
+      }
+    },
+    {
+      "id": "97arbplbib",
+      "createdAt": "2026-08-10T14:40:06+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/97arbplbib",
+      "mobile": {
+        "performance": 92,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 2.6,
+        "lcpSeconds": 2.6,
+        "tbtMs": 0,
+        "cls": 0.067,
+        "speedIndexSeconds": 2.6,
+        "agentBrowsing": "2/2"
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 92,
+        "seo": 100,
+        "fcpSeconds": 0.4,
+        "lcpSeconds": 0.4,
+        "tbtMs": 0,
+        "cls": 0.008,
+        "speedIndexSeconds": 0.4,
+        "agentBrowsing": "2/2"
+      }
+    },
+    {
+      "id": "drcvw90tem",
+      "createdAt": "2026-08-10T14:40:51+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/drcvw90tem",
+      "mobile": {
+        "performance": 92,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 2.6,
+        "lcpSeconds": 2.6,
+        "tbtMs": 0,
+        "cls": 0.067,
+        "speedIndexSeconds": 2.6,
+        "agentBrowsing": "2/2"
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 92,
+        "seo": 100,
+        "fcpSeconds": 0.4,
+        "lcpSeconds": 0.4,
+        "tbtMs": 0,
+        "cls": 0.008,
+        "speedIndexSeconds": 0.4,
+        "agentBrowsing": "2/2"
+      }
+    }
+  ],
+  "lighthouseCliSupplement": {
+    "tool": "Lighthouse CLI 12.8.2",
+    "method": "median of 3 simulate runs each",
+    "measuredAt": "2026-08-10T14:36–14:38+09:00",
+    "note": "Cross-check only; not mixed into PSI medians.",
+    "median": {
+      "mobile": {
+        "performance": 99,
+        "accessibility": 92,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 1.7,
+        "lcpSeconds": 1.9,
+        "tbtMs": 0,
+        "cls": 0.001,
+        "speedIndexSeconds": 1.7
+      },
+      "desktop": {
+        "performance": 84,
+        "accessibility": 92,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 1.7,
+        "lcpSeconds": 1.7,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexSeconds": 1.7
+      }
+    }
+  }
+}

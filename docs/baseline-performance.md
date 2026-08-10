@@ -2,12 +2,12 @@
 
 Lab 計測（PageSpeed Insights / Lighthouse **13.4.1**）。各条件とも **成功した 3 回の中央値**（特記なき限り）。CrUX はデータなし。
 
-| 項目 | STUDIO（切替前） | Pages プレビュー | Pages 本番（切替直後） | **Pages 本番（最適化後）** |
-|------|------------------|------------------|------------------------|----------------------------|
-| URL | https://q.auditnqa.com/ | https://auditnq-japanese.pages.dev/ | https://q.auditnqa.com/ | **https://q.auditnqa.com/** |
-| ホスト | `Google Frontend` | `cloudflare` | `cloudflare` | **`cloudflare`** |
-| 測定日 | 2026-08-10 午前 | 2026-08-10 午前 | 2026-08-10 12:28–12:33 JST | **2026-08-10 14:07–14:18 JST** |
-| 生データ | `psi-baseline-2026-08-10.json` | `psi-pagesdev-2026-08-10.json` | `psi-production-pages-2026-08-10.json` | **`psi-production-optimized-2026-08-10.json`** |
+| 項目 | STUDIO（切替前） | Pages プレビュー | Pages 本番（切替直後） | 本番（GTM/フォント最適化） | **本番（画像/CLS 対策後・現行）** |
+|------|------------------|------------------|------------------------|----------------------------|-----------------------------------|
+| URL | https://q.auditnqa.com/ | https://auditnq-japanese.pages.dev/ | https://q.auditnqa.com/ | https://q.auditnqa.com/ | **https://q.auditnqa.com/** |
+| ホスト | `Google Frontend` | `cloudflare` | `cloudflare` | `cloudflare` | **`cloudflare`** |
+| 測定日 | 2026-08-10 午前 | 2026-08-10 午前 | 2026-08-10 12:28–12:33 JST | 2026-08-10 14:07–14:18 JST | **2026-08-10 14:38–14:40 JST** |
+| 生データ | `psi-baseline-2026-08-10.json` | `psi-pagesdev-2026-08-10.json` | `psi-production-pages-2026-08-10.json` | `psi-production-optimized-2026-08-10.json` | **`psi-production-images-cls-2026-08-10.json`** |
 
 ## 中央値の並び（比較用）
 
@@ -16,45 +16,54 @@ Lab 計測（PageSpeed Insights / Lighthouse **13.4.1**）。各条件とも **�
 | Mobile | STUDIO | **35** | 95 | 77 | 100 | 6.4 s | **14.5 s** | 660 ms | 0.178 | 6.4 s |
 | Mobile | Pages preview | **58** | 92 | 77 | 100 | 7.2 s | **8.8 s** | 0 ms | 0.002 | 7.2 s |
 | Mobile | Pages 本番（切替直後） | **58** | 92 | 77 | 100 | 7.3 s | **9.4 s** | 0 ms | 0.003 | 7.3 s |
-| Mobile | **本番（最適化後）** | **83** | 96 | **88** | 100 | **1.7 s** | **2.4 s** | 0 ms | 0.279 | **1.7 s** |
+| Mobile | 本番（GTM/フォント最適化） | **83** | 96 | **88** | 100 | **1.7 s** | **2.4 s** | 0 ms | 0.279 | **1.7 s** |
+| Mobile | **現行（画像/CLS）** | **92** | 92 | **96** | 100 | **2.6 s** | **2.6 s** | 0 ms | **0.067** | **2.6 s** |
 | Desktop | STUDIO | **58** | 95 | 77 | 100 | 1.2 s | **2.5 s** | 540 ms | 0.002 | 1.8 s |
 | Desktop | Pages preview | **90** | 92 | 77 | 100 | 1.4 s | **1.5 s** | 0 ms | 0.005 | 1.4 s |
 | Desktop | Pages 本番（切替直後） | **90** | 92 | 77 | 100 | 1.4 s | **1.5 s** | 0 ms | 0.005 | 1.4 s |
-| Desktop | **本番（最適化後）** | **100** | 92 | **96** | 100 | **0.7 s** | **0.7 s** | 0 ms | 0.004 | **0.7 s** |
+| Desktop | 本番（GTM/フォント最適化） | **100** | 92 | **96** | 100 | **0.7 s** | **0.7 s** | 0 ms | 0.004 | **0.7 s** |
+| Desktop | **現行（画像/CLS）** | **100** | 96 | **92** | 100 | **0.4 s** | **0.4 s** | 0 ms | **0.008** | **0.4 s** |
 
 条件: Mobile = Moto G Power + 低速 4G / Desktop = デスクトップエミュレーション（PSI 標準）。
 
-### 差分（最適化後 − 切替直後、中央値）
+### 差分（現行 − 切替直後、中央値）
 
-| Device | Perf | Best Practices | LCP | FCP |
+| Device | Perf | Best Practices | LCP | FCP | CLS |
+|--------|------|----------------|-----|-----|-----|
+| Mobile | **+34** | **+19** | **−6.8 s** | **−4.7 s** | +0.064 |
+| Desktop | **+10** | **+15** | **−1.1 s** | **−1.0 s** | +0.003 |
+
+### 差分（現行 − GTM/フォント最適化、中央値）
+
+| Device | Perf | Best Practices | LCP | CLS |
 |--------|------|----------------|-----|-----|
-| Mobile | **+25** | **+11** | **−7.0 s** | **−5.6 s** |
-| Desktop | **+10** | **+19** | **−0.8 s** | **−0.7 s** |
+| Mobile | **+9** | **+8** | +0.2 s | **−0.212** |
+| Desktop | 0 | −4 | **−0.3 s** | +0.004 |
 
 読み取り:
 
-- 切替直後比で Mobile LCP / FCP と Best Practices が大きく改善（GTM 遅延・CJK Web フォント削除が主因）
-- Desktop は Perf **100** / Best Practices **96**
-- 最適化後 Mobile 中央値の CLS **0.279** は 3 回中 2 回の跳ねの影響。CLS が低い回だけ見ると Mobile Perf **93** / BP **96** / LCP **2.6 s**（下記「低 CLS 参考」）
-- A11y は主指標ではない（切替直後 92 → 最適化後中央値 96）
+- 現行 Mobile は Perf **92** / Best Practices **96** / Agent **2/2**。直前の最適化後中央値（Perf 83 / BP 88 / CLS 0.279）から、画像 `srcset` とカルーセル `aspect-ratio` で安定
+- Desktop は Perf **100** を維持。Best Practices 中央値は 96 → 92（回によって 92/96）
+- 切替直後比では Mobile LCP 約 **9.4 s → 2.6 s**
 
-### 最適化後に入れた主な変更
+### ここまでに入れた主な変更
 
 - 未使用 HubSpot 埋め込みの削除
 - GTM を pointer / key / touch 後（または load 後 30 秒）に遅延。Lighthouse の scroll では起動しない
 - Noto Sans JP の Google Fonts 配信をやめ、本文はシステム日本語フォント。英字見出しのみ Red Hat Display
 - Material Icons → CSS マスクアイコン
 - ヒーロー LCP 画像の preload + `fetchpriority=high`
+- **ヒーローロゴ / カルーセルの `srcset`（720w WebP）とカルーセル `aspect-ratio`（CLS 抑制）**
 
 ## 配信・HTML
 
-| 項目 | STUDIO | Pages preview | 切替直後 | **最適化後** |
-|------|--------|---------------|----------|--------------|
-| `server` | Google Frontend | cloudflare | cloudflare | **cloudflare** |
-| DNS | A → STUDIO IP | `*.pages.dev` | CNAME → Pages | **同左** |
-| `cache-control` | `s-maxage=3, max-age=0` | `max-age=0, must-revalidate` | 同左 | **同左** |
-| 初回 HTML | ~15 KB / Nuxt CSR | ~25 KB / 本文入り | ~25 KB | **~25 KB** |
-| curl TTFB（参考） | ~0.14 s | ~0.02 s | ~0.03 s | **~0.03 s** |
+| 項目 | STUDIO | Pages preview | 切替直後 | GTM/フォント最適化 | **現行（画像/CLS）** |
+|------|--------|---------------|----------|--------------------|----------------------|
+| `server` | Google Frontend | cloudflare | cloudflare | cloudflare | **cloudflare** |
+| DNS | A → STUDIO IP | `*.pages.dev` | CNAME → Pages | 同左 | **同左** |
+| `cache-control` | `s-maxage=3, max-age=0` | `max-age=0, must-revalidate` | 同左 | 同左 | **同左** |
+| 初回 HTML | ~15 KB / Nuxt CSR | ~25 KB / 本文入り | ~25 KB | ~25 KB | **~26 KB** |
+| curl TTFB（参考） | ~0.14 s | ~0.02 s | ~0.03 s | ~0.03 s | **~0.03 s** |
 
 ---
 
@@ -173,3 +182,34 @@ PSI API が使えなかった時間帯のクロスチェック。PSI 中央値�
 |--------|------|------|----|-----|-----|-----|-----|-----|----|
 | Mobile | 98 | 92 | 100 | 100 | 1.7 s | 2.0 s | 0 ms | 0.001 | 1.7 s |
 | Desktop | 82 | 92 | 100 | 100 | 1.7 s | 2.0 s | 0 ms | 0.04 | 1.7 s |
+
+---
+
+## Pages 本番詳細（画像/CLS 対策後・現行・2026-08-10 14:38–14:40 JST）
+
+Mobile+Desktop とも成功した 3 回の中央値。生データ: `psi-production-images-cls-2026-08-10.json`。
+
+### Mobile
+
+| # | Report | Perf | A11y | BP | SEO | FCP | LCP | TBT | CLS | SI | Agent |
+|---|--------|------|------|----|-----|-----|-----|-----|-----|----|-------|
+| 1 | [pbv9fhjh49](https://pagespeed.web.dev/analysis/https-q-auditnqa-com/pbv9fhjh49?form_factor=mobile) | 93 | 92 | 96 | 100 | 2.6 s | 2.6 s | 0 ms | 0.001 | 2.6 s | 2/2 |
+| 2 | [97arbplbib](https://pagespeed.web.dev/analysis/https-q-auditnqa-com/97arbplbib?form_factor=mobile) | 92 | 92 | 96 | 100 | 2.6 s | 2.6 s | 0 ms | 0.067 | 2.6 s | 2/2 |
+| 3 | [drcvw90tem](https://pagespeed.web.dev/analysis/https-q-auditnqa-com/drcvw90tem?form_factor=mobile) | 92 | 92 | 96 | 100 | 2.6 s | 2.6 s | 0 ms | 0.067 | 2.6 s | 2/2 |
+| **中央値** | | **92** | **92** | **96** | **100** | **2.6 s** | **2.6 s** | **0 ms** | **0.067** | **2.6 s** | **2/2** |
+
+### Desktop
+
+| # | Report | Perf | A11y | BP | SEO | FCP | LCP | TBT | CLS | SI | Agent |
+|---|--------|------|------|----|-----|-----|-----|-----|-----|----|-------|
+| 1 | [pbv9fhjh49](https://pagespeed.web.dev/analysis/https-q-auditnqa-com/pbv9fhjh49?form_factor=desktop) | 100 | 92 | 96 | 100 | 0.7 s | 0.7 s | 0 ms | 0.004 | 0.7 s | 2/2 |
+| 2 | [97arbplbib](https://pagespeed.web.dev/analysis/https-q-auditnqa-com/97arbplbib?form_factor=desktop) | 100 | 96 | 92 | 100 | 0.4 s | 0.4 s | 0 ms | 0.008 | 0.4 s | 2/2 |
+| 3 | [drcvw90tem](https://pagespeed.web.dev/analysis/https-q-auditnqa-com/drcvw90tem?form_factor=desktop) | 100 | 96 | 92 | 100 | 0.4 s | 0.4 s | 0 ms | 0.008 | 0.4 s | 2/2 |
+| **中央値** | | **100** | **96** | **92** | **100** | **0.4 s** | **0.4 s** | **0 ms** | **0.008** | **0.4 s** | **2/2** |
+
+### 補足: Lighthouse CLI（画像/CLS 後・12.8.2・各 3 回中央値）
+
+| Device | Perf | A11y | BP | SEO | FCP | LCP | TBT | CLS | SI |
+|--------|------|------|----|-----|-----|-----|-----|-----|----|
+| Mobile | 99 | 92 | 100 | 100 | 1.7 s | 1.9 s | 0 ms | 0.001 | 1.7 s |
+| Desktop | 84 | 92 | 100 | 100 | 1.7 s | 1.7 s | 0 ms | 0 | 1.7 s |
