@@ -57,7 +57,7 @@
 |------|-----------|
 | Google Analytics | `G-2Q1QNWF0R0` |
 | Google Tag Manager | `GTM-NPD8FMJS` |
-| HubSpot chat | `//js-na2.hs-scripts.com/241956367.js` |
+| HubSpot chat | （移行後は未使用・埋め込みなし） |
 
 ## デザイン（現行トークン）
 

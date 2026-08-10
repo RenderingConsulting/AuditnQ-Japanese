@@ -33,7 +33,7 @@ Lab 計測（PageSpeed Insights / Lighthouse **13.4.1**）。各条件とも **�
 
 - 本番もプレビューと同水準。切替は性能面でも問題なし
 - Perf / LCP / TBT は STUDIO 比で大きく改善（静的 HTML + Cloudflare）
-- Mobile FCP は STUDIO よりやや遅い（フォント・画像・GTM/HubSpot 要確認）
+- Mobile FCP は STUDIO よりやや遅い（フォント・画像・GTM 要確認）
 - A11y は 95 → 92（移行効果の主指標ではない）
 
 ## 配信・HTML

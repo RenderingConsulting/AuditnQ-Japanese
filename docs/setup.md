@@ -16,7 +16,7 @@ GitHub リポジトリ `RenderingConsulting/AuditnQ-Japanese` は作成済み想
 ## カットオーバー前チェック
 
 - [ ] `/` `/service/` `/blog/` `/news/` 文言・CTA 確認
-- [ ] Paperform / GTM / HubSpot 動作
+- [ ] Paperform / GTM 動作
 - [ ] `_redirects`（`/blog/all` → `/blog/`、`/index.html` → `/`）
 - [ ] OGP / favicon / sitemap（thanks ページが sitemap に含まれないこと）
 - [ ] `robots.txt`（thanks Disallow）と `_headers`（セキュリティヘッダ）

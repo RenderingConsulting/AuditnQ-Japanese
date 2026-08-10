@@ -19,7 +19,7 @@
 | 1 | Hugo skeleton / CI | ✅ |
 | 2 | `/`・`/service` 見た目踏襲 | ✅ |
 | 3 | blog / news 移行・体裁 | ✅（体裁） / 内容は継続 |
-| 4 | Paperform / GA / GTM / HubSpot | 予定 |
+| 4 | Paperform / GA / GTM | ✅（HubSpot は未使用のため未導入） |
 | 5 | SEO・DNS カットオーバー | ✅（`q.auditnqa.com` → Pages） |
 
 詳細: `docs/phase0-inventory.md` / `docs/baseline-performance.md` / `docs/url-mapping.md` / `docs/design-tokens.md`
