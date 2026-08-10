@@ -7,9 +7,9 @@
       <p>{{ .Site.Params.productName }}（オーディトン キュー）は、委託先/再委託先（Nth Party）を一元化、企業集中リスクや地域リスクを可視化して、サプライチェーン全体のリスク管理を実現する委託先管理システムです。</p>
     </div>
     <nav class="footer-nav" aria-label="フッター">
-      <a href="{{ .Site.Params.companyURL }}" rel="noopener noreferrer">運営会社</a>
-      <a href="{{ .Site.Params.privacyURL }}" rel="noopener noreferrer">プライバシーポリシー</a>
+      <a href="{{ .Site.Params.companyURL }}" rel="noopener noreferrer" target="_blank">運営会社</a>
+      <a href="{{ .Site.Params.privacyURL }}" rel="noopener noreferrer" target="_blank">プライバシーポリシー</a>
     </nav>
+    <p class="site-footer__copy">©️{{ .Site.Params.companyNameEn }}. All rights reserved</p>
   </div>
-  <p class="site-footer__copy wrap">© {{ now.Year }} {{ .Site.Params.companyNameEn }}. All rights reserved</p>
 </footer>
