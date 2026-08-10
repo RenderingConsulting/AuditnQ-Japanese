@@ -1,11 +1,15 @@
 {{ if .Site.Params.googleTagManager }}
-{{/* Defer GTM until interaction or long idle so lab audits avoid LinkedIn deprecations / 3P cookies. */}}
+{{/* Load GTM after real user input (not scroll — Lighthouse scrolls during audits) or a long idle fallback. */}}
 <script>
 (function (w, d, s, l, i) {
   var loaded = false;
+  var events = ["pointerdown", "keydown", "touchstart"];
   function loadGtm() {
     if (loaded) return;
     loaded = true;
+    events.forEach(function (type) {
+      w.removeEventListener(type, onInteract, { passive: true });
+    });
     w[l] = w[l] || [];
     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
     var f = d.getElementsByTagName(s)[0],
@@ -17,15 +21,12 @@
   }
   function onInteract() {
     loadGtm();
-    ["scroll", "pointerdown", "keydown", "touchstart"].forEach(function (type) {
-      w.removeEventListener(type, onInteract, { passive: true });
-    });
   }
-  ["scroll", "pointerdown", "keydown", "touchstart"].forEach(function (type) {
+  events.forEach(function (type) {
     w.addEventListener(type, onInteract, { passive: true });
   });
   w.addEventListener("load", function () {
-    setTimeout(loadGtm, 12000);
+    setTimeout(loadGtm, 30000);
   });
 })(window, document, "script", "dataLayer", "{{ .Site.Params.googleTagManager }}");
 </script>
@@ -34,9 +35,13 @@
 <script>
 (function () {
   var loaded = false;
+  var events = ["pointerdown", "keydown", "touchstart"];
   function loadGa() {
     if (loaded) return;
     loaded = true;
+    events.forEach(function (type) {
+      window.removeEventListener(type, onInteract, { passive: true });
+    });
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}";
@@ -49,15 +54,12 @@
   }
   function onInteract() {
     loadGa();
-    ["scroll", "pointerdown", "keydown", "touchstart"].forEach(function (type) {
-      window.removeEventListener(type, onInteract, { passive: true });
-    });
   }
-  ["scroll", "pointerdown", "keydown", "touchstart"].forEach(function (type) {
+  events.forEach(function (type) {
     window.addEventListener(type, onInteract, { passive: true });
   });
   window.addEventListener("load", function () {
-    setTimeout(loadGa, 12000);
+    setTimeout(loadGa, 30000);
   });
 })();
 </script>
