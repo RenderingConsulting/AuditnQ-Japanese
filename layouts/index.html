@@ -7,7 +7,15 @@
       <p class="hero__kicker">委託先/再委託先を一元管理して可視化</p>
       <p class="hero__kicker hero__kicker--sub">企業全体のサプライチェーンリスクを低減</p>
       <div class="hero__brand">
-        <img src="{{ "/images/brand/logo.webp" | relURL }}" width="480" height="108" alt="{{ .Site.Params.productName }}" decoding="async">
+        <img
+          src="{{ "/images/brand/logo-sm.webp" | relURL }}"
+          srcset="{{ "/images/brand/logo-sm.webp" | relURL }} 591w, {{ "/images/brand/logo.webp" | relURL }} 1093w"
+          sizes="(max-width: 899px) min(100vw - 2rem, 28rem), 28rem"
+          width="480"
+          height="108"
+          alt="{{ .Site.Params.productName }}"
+          decoding="async"
+        >
       </div>
       <h1 class="hero__kana">{{ .Site.Params.productNameKana }}</h1>
       <div class="hero__actions">
@@ -20,13 +28,40 @@
       <div class="carousel__viewport" data-carousel-live>
         <div class="carousel__track">
           <figure class="carousel__slide is-active">
-            <img src="{{ "/images/hero/carousel/01.webp" | relURL }}" alt="AuditnQの画面イメージ" width="1106" height="652" fetchpriority="high" decoding="async">
+            <img
+              src="{{ "/images/hero/carousel/01-720.webp" | relURL }}"
+              srcset="{{ "/images/hero/carousel/01-720.webp" | relURL }} 720w, {{ "/images/hero/carousel/01.webp" | relURL }} 1106w"
+              sizes="(max-width: 899px) min(100vw - 2rem, 36rem), min(50vw, 40rem)"
+              alt="AuditnQの画面イメージ"
+              width="1106"
+              height="652"
+              fetchpriority="high"
+              decoding="async"
+            >
           </figure>
           <figure class="carousel__slide">
-            <img src="{{ "/images/hero/carousel/02.webp" | relURL }}" alt="地域集中分析の画面" width="1106" height="652" loading="lazy" decoding="async">
+            <img
+              src="{{ "/images/hero/carousel/02-720.webp" | relURL }}"
+              srcset="{{ "/images/hero/carousel/02-720.webp" | relURL }} 720w, {{ "/images/hero/carousel/02.webp" | relURL }} 1106w"
+              sizes="(max-width: 899px) min(100vw - 2rem, 36rem), min(50vw, 40rem)"
+              alt="地域集中分析の画面"
+              width="1106"
+              height="652"
+              loading="lazy"
+              decoding="async"
+            >
           </figure>
           <figure class="carousel__slide">
-            <img src="{{ "/images/hero/carousel/03.webp" | relURL }}" alt="AuditnQのダッシュボード" width="1106" height="652" loading="lazy" decoding="async">
+            <img
+              src="{{ "/images/hero/carousel/03-720.webp" | relURL }}"
+              srcset="{{ "/images/hero/carousel/03-720.webp" | relURL }} 720w, {{ "/images/hero/carousel/03.webp" | relURL }} 1106w"
+              sizes="(max-width: 899px) min(100vw - 2rem, 36rem), min(50vw, 40rem)"
+              alt="AuditnQのダッシュボード"
+              width="1106"
+              height="652"
+              loading="lazy"
+              decoding="async"
+            >
           </figure>
         </div>
         <div class="carousel__controls">

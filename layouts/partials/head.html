@@ -51,7 +51,14 @@
 <link rel="stylesheet" href="{{ $fontCss }}" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{{ $fontCss }}"></noscript>
 {{ if .IsHome }}
-<link rel="preload" as="image" href="{{ "/images/hero/carousel/01.webp" | relURL }}" fetchpriority="high">
+<link
+  rel="preload"
+  as="image"
+  href="{{ "/images/hero/carousel/01-720.webp" | relURL }}"
+  imagesrcset="{{ "/images/hero/carousel/01-720.webp" | relURL }} 720w, {{ "/images/hero/carousel/01.webp" | relURL }} 1106w"
+  imagesizes="(max-width: 899px) min(100vw - 2rem, 36rem), min(50vw, 40rem)"
+  fetchpriority="high"
+>
 {{ end }}
 
 {{ with resources.Get "css/main.css" }}

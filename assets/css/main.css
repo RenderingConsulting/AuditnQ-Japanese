@@ -273,17 +273,20 @@ a:hover { color: var(--ink); }
 }
 .carousel__viewport {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   background: transparent;
   box-shadow: none;
   border-radius: 0;
+  aspect-ratio: 1106 / 652;
 }
 .carousel__track {
-  position: relative;
+  position: absolute;
+  inset: 0;
 }
 .carousel__slide {
   display: none;
   margin: 0;
+  height: 100%;
 }
 .carousel__slide.is-active {
   display: block;
@@ -291,7 +294,8 @@ a:hover { color: var(--ink); }
 }
 .carousel__slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   vertical-align: middle;
 }
 .carousel__controls {
