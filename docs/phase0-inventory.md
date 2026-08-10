@@ -12,9 +12,9 @@
 | キャッシュ | `s-maxage=3` | CDN 長期キャッシュ |
 | メンテ | STUDIO GUI | Git + Markdown |
 | AI / クローラ | JS 実行前提 | 静的テキストをそのまま読める |
-| パフォーマンス | PSI Lab 中央値 Mobile Perf **35** / Desktop **58**（LCP 14.5 s / 2.5 s） | 静的配信 + CDN で Lab 改善を確認 |
+| パフォーマンス | PSI Lab 中央値 Mobile Perf **35** / Desktop **58**（LCP 14.5 s / 2.5 s） | **Pages 本番** Mobile **58** / Desktop **90**（LCP 9.4 s / 1.5 s）。DNS 切替済み |
 
-パフォーマンス詳細（3 回中央値・レポート URL）: [`docs/baseline-performance.md`](./baseline-performance.md)
+比較表（STUDIO / preview / 本番）: [`docs/baseline-performance.md`](./baseline-performance.md)
 
 ## ページ一覧
 
