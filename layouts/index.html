@@ -11,7 +11,7 @@
       </div>
       <h1 class="hero__kana">{{ .Site.Params.productNameKana }}</h1>
       <div class="hero__actions">
-        <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="material-icons btn__icon" aria-hidden="true">file_download</span></a>
+        <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="icon icon--download btn__icon" aria-hidden="true"></span></a>
         <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
       </div>
     </div>
@@ -20,13 +20,13 @@
       <div class="carousel__viewport" data-carousel-live>
         <div class="carousel__track">
           <figure class="carousel__slide is-active">
-            <img src="{{ "/images/hero/carousel/01.webp" | relURL }}" alt="AuditnQの画面イメージ" width="1106" height="652">
+            <img src="{{ "/images/hero/carousel/01.webp" | relURL }}" alt="AuditnQの画面イメージ" width="1106" height="652" fetchpriority="high" decoding="async">
           </figure>
           <figure class="carousel__slide">
-            <img src="{{ "/images/hero/carousel/02.webp" | relURL }}" alt="地域集中分析の画面" width="1106" height="652" loading="lazy">
+            <img src="{{ "/images/hero/carousel/02.webp" | relURL }}" alt="地域集中分析の画面" width="1106" height="652" loading="lazy" decoding="async">
           </figure>
           <figure class="carousel__slide">
-            <img src="{{ "/images/hero/carousel/03.webp" | relURL }}" alt="AuditnQのダッシュボード" width="1106" height="652" loading="lazy">
+            <img src="{{ "/images/hero/carousel/03.webp" | relURL }}" alt="AuditnQのダッシュボード" width="1106" height="652" loading="lazy" decoding="async">
           </figure>
         </div>
         <div class="carousel__controls">
@@ -70,7 +70,7 @@
       {{ end }}
     </div>
     <p class="section-cta">
-      <a class="more-link" href="{{ "/service/" | relURL }}">詳しくみる<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
+      <a class="more-link" href="{{ "/service/" | relURL }}">詳しくみる<span class="icon icon--chevron more-link__icon" aria-hidden="true"></span></a>
     </p>
   </div>
 </section>
@@ -83,7 +83,7 @@
         <h2>機能一覧</h2>
         <p>課題解決を支援する豊富な機能</p>
       </div>
-      <a class="more-link" href="{{ "/service/#function" | relURL }}">詳しくみる<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
+      <a class="more-link" href="{{ "/service/#function" | relURL }}">詳しくみる<span class="icon icon--chevron more-link__icon" aria-hidden="true"></span></a>
     </header>
     <div class="function-grid">
       {{ range $i, $id := $site.home_functions }}
@@ -95,7 +95,7 @@
             <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="160" height="148" loading="lazy" role="presentation">
             {{ end }}
             <h3>{{ .title }}</h3>
-            <span class="function-card__more">Learn more<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></span>
+            <span class="function-card__more">Learn more<span class="icon icon--chevron more-link__icon" aria-hidden="true"></span></span>
           </a>
           {{ end }}
         {{ end }}
