@@ -13,6 +13,9 @@
       {{ range .Site.Menus.main }}
       <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}
+      <a href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">説明書</a>
+      <a href="{{ .Site.Params.companyURL }}" rel="noopener noreferrer" target="_blank">運営会社</a>
+      <a href="{{ .Site.Params.privacyURL }}" rel="noopener noreferrer" target="_blank">プラポリ</a>
       <a class="btn btn--primary btn--sm" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="material-icons btn__icon" aria-hidden="true">file_download</span></a>
       <a class="btn btn--cta btn--sm" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナー予約</a>
     </nav>
