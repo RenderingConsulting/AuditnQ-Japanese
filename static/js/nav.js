@@ -1,23 +1,29 @@
 (() => {
-  const toggle = document.getElementById("nav-toggle");
-  const btn = document.querySelector(".nav-toggle-btn");
-  const nav = document.querySelector(".nav");
-  if (!toggle || !btn || !nav) return;
+  const btn = document.getElementById("nav-toggle-btn");
+  const nav = document.getElementById("site-nav");
+  if (!btn || !nav) return;
 
-  nav.id = "site-nav";
-  btn.setAttribute("aria-controls", "site-nav");
-
-  const sync = () => {
-    btn.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+  const setOpen = (open) => {
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
   };
 
-  toggle.addEventListener("change", sync);
+  btn.addEventListener("click", () => {
+    const open = btn.getAttribute("aria-expanded") !== "true";
+    setOpen(open);
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && toggle.checked) {
-      toggle.checked = false;
-      sync();
+    if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") {
+      setOpen(false);
       btn.focus();
     }
   });
-  sync();
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  setOpen(false);
 })();

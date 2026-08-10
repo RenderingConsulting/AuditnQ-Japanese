@@ -4,10 +4,9 @@
       <img class="brand__logo" src="{{ "/images/brand/logo-sm.webp" | relURL }}" width="150" height="34" alt="{{ .Site.Params.productName }}">
     </a>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" autocomplete="off">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </label>
+    <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
 
     <nav class="nav" id="site-nav" aria-label="メイン">
       {{ range .Site.Menus.main }}

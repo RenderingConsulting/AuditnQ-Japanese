@@ -1,0 +1,125 @@
+{
+  "url": "https://auditnq-japanese.pages.dev/",
+  "measuredAt": "2026-08-10",
+  "timezone": "Asia/Tokyo",
+  "tool": "PageSpeed Insights",
+  "lighthouseVersion": "13.4.1",
+  "method": "median of 3 lab runs",
+  "fieldData": null,
+  "note": "Preview host; final comparison should use q.auditnqa.com after DNS cutover",
+  "delivery": {
+    "server": "cloudflare",
+    "cacheControl": "public, max-age=0, must-revalidate",
+    "htmlBytesApprox": 24710,
+    "hasNuxtData": false,
+    "approxVisibleTextLength": 2680,
+    "htmlContainsBodyCopy": true
+  },
+  "median": {
+    "mobile": {
+      "performance": 58,
+      "accessibility": 92,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpSeconds": 7.2,
+      "lcpSeconds": 8.8,
+      "tbtMs": 0,
+      "cls": 0.002,
+      "speedIndexSeconds": 7.2
+    },
+    "desktop": {
+      "performance": 90,
+      "accessibility": 92,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpSeconds": 1.4,
+      "lcpSeconds": 1.5,
+      "tbtMs": 0,
+      "cls": 0.005,
+      "speedIndexSeconds": 1.4
+    }
+  },
+  "runs": [
+    {
+      "id": "jhe7o7louz",
+      "createdAt": "2026-08-10T11:31:40+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-auditnq-japanese-pages-dev/jhe7o7louz",
+      "mobile": {
+        "performance": 58,
+        "accessibility": 92,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 7.2,
+        "lcpSeconds": 10.1,
+        "tbtMs": 0,
+        "cls": 0.002,
+        "speedIndexSeconds": 7.2
+      },
+      "desktop": {
+        "performance": 89,
+        "accessibility": 92,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 1.4,
+        "lcpSeconds": 1.5,
+        "tbtMs": 0,
+        "cls": 0.005,
+        "speedIndexSeconds": 1.4
+      }
+    },
+    {
+      "id": "b0lewxn2tj",
+      "createdAt": "2026-08-10T11:31:55+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-auditnq-japanese-pages-dev/b0lewxn2tj",
+      "mobile": {
+        "performance": 58,
+        "accessibility": 92,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 7.2,
+        "lcpSeconds": 8.8,
+        "tbtMs": 0,
+        "cls": 0.002,
+        "speedIndexSeconds": 7.2
+      },
+      "desktop": {
+        "performance": 90,
+        "accessibility": 92,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 1.5,
+        "lcpSeconds": 1.5,
+        "tbtMs": 0,
+        "cls": 0.005,
+        "speedIndexSeconds": 1.5
+      }
+    },
+    {
+      "id": "tp07yx3kku",
+      "createdAt": "2026-08-10T11:34:08+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-auditnq-japanese-pages-dev/tp07yx3kku",
+      "mobile": {
+        "performance": 59,
+        "accessibility": 92,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 7.2,
+        "lcpSeconds": 7.7,
+        "tbtMs": 0,
+        "cls": 0.002,
+        "speedIndexSeconds": 7.2
+      },
+      "desktop": {
+        "performance": 90,
+        "accessibility": 92,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 1.4,
+        "lcpSeconds": 1.5,
+        "tbtMs": 0,
+        "cls": 0.005,
+        "speedIndexSeconds": 1.4
+      }
+    }
+  ]
+}

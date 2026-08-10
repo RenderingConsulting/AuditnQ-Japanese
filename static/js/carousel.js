@@ -21,10 +21,8 @@
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "carousel__dot" + (i === index ? " is-active" : "");
-      btn.setAttribute("role", "tab");
-      btn.setAttribute("aria-selected", i === index ? "true" : "false");
       btn.setAttribute("aria-label", `スライド ${i + 1}`);
-      btn.tabIndex = i === index ? 0 : -1;
+      btn.setAttribute("aria-current", i === index ? "true" : "false");
       btn.addEventListener("click", () => go(i));
       dotsWrap.appendChild(btn);
     });
