@@ -62,17 +62,17 @@
     <div class="function-layout">
       <nav class="function-side" aria-label="機能一覧">
         {{ range $site.functions }}
-        <a href="#{{ .id }}">{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</a>
+        <a href="#{{ .id }}">{{ .title }}</a>
         {{ end }}
       </nav>
       <div class="function-detail-list">
         {{ range $site.functions }}
         <article class="function-detail" id="{{ .id }}">
-          {{ with .icon }}
-          <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="120" height="110" loading="lazy" role="presentation">
+          {{ if .icon }}
+          <img class="function-detail__icon" src="{{ .icon | relURL }}" alt="{{ .title }}" width="120" height="110" loading="lazy">
           {{ end }}
           <div>
-            <h3>{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</h3>
+            <h3>{{ .title }}</h3>
             <p>{{ .body }}</p>
           </div>
         </article>
