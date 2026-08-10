@@ -1,8 +1,10 @@
 ---
 title: "Microsoft社によるスタートアップ支援プログラム「Microsoft for Startups Founders Hub」に採択されました"
 date: 2025-04-02
-description: "RenderingConsulting株式会社は、Microsoft Corporation（本社：米国ワシントン州、以下「マイクロソフト社」）が提供するスタートアップ企業支援プログラム「Micros..."
-slug: "news"
+description: "RenderingConsulting株式会社は、Microsoft Corporation（本社：米国ワシントン州、以下「マイクロソフト社」）が提供するスタートアップ企業支援プログラム「Microsoft for Startups Founders Hub」に採択されました。"
+slug: "microsoft-for-startups"
+aliases:
+  - /news/news/
 ---
 RenderingConsulting株式会社は、Microsoft Corporation（本社：米国ワシントン州、以下「マイクロソフト社」）が提供するスタートアップ企業支援プログラム「Microsoft for Startups Founders Hub」に採択されました。
 
