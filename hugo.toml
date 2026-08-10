@@ -21,10 +21,9 @@ canonifyURLs = false
   favicon = "/images/favicon.png"
   logo = "/images/brand/logo.webp"
   logoWhite = "/images/brand/logo.webp"
-  # Integrations (Phase 4 で有効化確認)
+  # Integrations
   googleAnalytics = "G-2Q1QNWF0R0"
   googleTagManager = "GTM-NPD8FMJS"
-  hubspotPortalId = "241956367"
   paperformDownload = "https://auditnq-dl-lp-202503.paperform.co"
   paperformWebinar = "https://webinar-202410.paperform.co"
   paperformInquiry = "https://auditnq-inquiry-lp-202503.paperform.co"
