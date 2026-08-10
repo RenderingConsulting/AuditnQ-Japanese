@@ -62,7 +62,6 @@
           <p class="feature__num">{{ .id }}</p>
           <h3>{{ .title }}</h3>
           <p>{{ .body }}</p>
-          <a class="btn btn--soft" href="{{ "/service/" | relURL }}">詳しくみる</a>
         </div>
         <div class="feature-row__media">
           <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
@@ -70,6 +69,9 @@
       </article>
       {{ end }}
     </div>
+    <p class="section-cta">
+      <a class="more-link" href="{{ "/service/" | relURL }}">詳しくみる<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
+    </p>
   </div>
 </section>
 
@@ -81,18 +83,19 @@
         <h2>機能一覧</h2>
         <p>課題解決を支援する豊富な機能</p>
       </div>
-      <a class="btn btn--soft" href="{{ "/service/#function" | relURL }}">一覧はこちら</a>
+      <a class="more-link" href="{{ "/service/#function" | relURL }}">一覧はこちら<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
     </header>
     <div class="function-grid">
       {{ range $i, $id := $site.home_functions }}
         {{ range $site.functions }}
           {{ if eq .id $id }}
           <a class="function-card" href="{{ printf "/service/#%s" .id | relURL }}">
-            {{ with .icon }}
-            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="120" height="110" loading="lazy">
-            {{ end }}
             <span class="function-card__num">{{ add $i 1 }}</span>
+            {{ with .icon }}
+            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="160" height="148" loading="lazy">
+            {{ end }}
             <h3>{{ .title }}</h3>
+            <span class="function-card__more">Learn more<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></span>
           </a>
           {{ end }}
         {{ end }}
