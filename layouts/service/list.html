@@ -2,7 +2,7 @@
 {{ $site := .Site.Data.site }}
 
 <section class="page-hero">
-  <div class="wrap">
+  <div class="wrap page-hero__inner">
     <p class="eyebrow eyebrow--brand"><span class="eyebrow__dot" aria-hidden="true"></span>Services</p>
     <h1>AuditnQをもっと詳しく</h1>
     <p class="lede">具体的な業務フローやお役立ち機能をご紹介します。委託先の初回選定から定期監査、リスク分析まで、一連の業務と情報を一元管理し、グループ全体のサイバーリスクを低減します。</p>
@@ -29,19 +29,25 @@
       </article>
       {{ end }}
     </div>
-    <p class="section-note">自社のみならず顧客も含めたサプライチェーン全体のリスクを低減します</p>
+    <p class="section-note section-note--brand">自社のみならず顧客も含めたサプライチェーン全体のリスクを低減します</p>
+    <figure class="service-closing">
+      <img src="{{ "/images/service/supply-chain.svg" | relURL }}" alt="サプライチェーン全体のリスク低減のイメージ" width="1120" height="360" loading="lazy">
+    </figure>
   </div>
 </section>
 
 <section class="section section--muted">
-  <div class="wrap download-strip">
-    <div class="download-strip__media">
-      <img src="{{ "/images/cta/download.webp" | relURL }}" alt="" width="480" height="252" loading="lazy">
-    </div>
-    <div>
-      <h2>資料ダウンロード</h2>
-      <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます</p>
-      <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード</a>
+  <div class="wrap">
+    <div class="download-strip">
+      <div class="download-strip__media">
+        <img src="{{ "/images/cta/download.webp" | relURL }}" alt="AuditnQお役立ち資料のイメージ" width="1200" height="630" loading="lazy">
+      </div>
+      <div class="download-strip__body">
+        <p class="cta-card__eyebrow">Download</p>
+        <h2>資料ダウンロード</h2>
+        <p>AuditnQのサービス概要が3分で分かる資料をダウンロードできます</p>
+        <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">無料でダウンロード<span class="material-icons btn__icon" aria-hidden="true">file_download</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -63,10 +69,10 @@
         {{ range $site.functions }}
         <article class="function-detail" id="{{ .id }}">
           {{ with .icon }}
-          <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="96" height="88" loading="lazy">
+          <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="120" height="110" loading="lazy">
           {{ end }}
           <div>
-            <h3>{{ .title }}</h3>
+            <h3>{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</h3>
             <p>{{ .body }}</p>
           </div>
         </article>
@@ -120,7 +126,9 @@
       </a>
       {{ end }}
     </div>
-    <p class="section-cta"><a class="text-link" href="{{ "/blog/" | relURL }}">Blog 一覧 →</a></p>
+    <p class="section-cta">
+      <a class="more-link" href="{{ "/blog/" | relURL }}">一覧はこちら<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
+    </p>
   </div>
 </section>
 
@@ -133,7 +141,7 @@
       <h2>お問い合わせ</h2>
       <p>見積もりを依頼したい、製品デモを見たいなどのご用件はぜひ気軽にお問い合わせください。</p>
     </div>
-    <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformInquiry }}" rel="noopener noreferrer" target="_blank">お問い合わせはこちら</a>
+    <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformInquiry }}" rel="noopener noreferrer" target="_blank">お問い合わせはこちら<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
   </div>
 </section>
 {{ end }}
