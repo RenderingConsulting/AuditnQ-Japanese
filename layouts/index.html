@@ -128,8 +128,8 @@
           {{ if eq .id $id }}
           <a class="function-card" href="{{ printf "/service/#%s" .id | relURL }}">
             <span class="function-card__num">{{ add $i 1 }}</span>
-            {{ with .icon }}
-            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="160" height="148" loading="lazy" role="presentation">
+            {{ if .icon }}
+            <img class="function-card__icon" src="{{ .icon | relURL }}" alt="{{ .title }}" width="160" height="148" loading="lazy">
             {{ end }}
             <h3>{{ .title }}</h3>
             <span class="function-card__more">Learn more<span class="icon icon--chevron more-link__icon" aria-hidden="true"></span></span>

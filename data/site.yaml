@@ -15,8 +15,7 @@ features:
 functions:
   - id: regular
     number: 1
-    title: "定期/臨時監査支援"
-    short: "定期監査支援"
+    title: "定期監査支援"
     icon: "/images/functions/01.svg"
     body: "主に半年もしくは１年ごとに行われる「監査業務」を支援します。当該監査で対象とする個別契約の抽出・選定から、主管部門と役割分担しながらの委託先への情報提供依頼、回収状況や評価状況のプロセス管理などを支援します。当然、定期のみならず、臨時での監査も行うことが可能です。"
   - id: individual
@@ -26,8 +25,7 @@ functions:
     body: "選定の段階から、契約の主管部門や担当者、調査票の種類、複数の候補社への情報提供依頼と回収、最終的に契約をする委託先や契約日などの関連情報を一元的に管理します。"
   - id: excel
     number: 3
-    title: "エクセルフォーマット設定"
-    short: "Excelフォーマット設定"
+    title: "Excelフォーマット設定"
     icon: "/images/functions/03.svg"
     body: "Excel（エクセル）で作成されている既存の調査票を本サービスに取り込み、必要な設定を行います。Excel（エクセル）を活用することで、情報のやり取りに関するサービスの展開難易度・運用負荷の低減と、情報の適切な一元管理によるリスク低減と業務効率化を両立します。"
   - id: share
@@ -71,6 +69,7 @@ home_functions:
   - individual
   - excel
   - share
+  - outbound-in
   - answer
   - multicompany
   - nth-party
