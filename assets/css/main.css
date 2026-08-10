@@ -113,12 +113,11 @@ a:hover { color: var(--ink); }
   position: relative;
 }
 .brand { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.wordmark {
-  font-family: var(--font-en); font-weight: 700; font-size: 1.4rem;
-  letter-spacing: -0.02em; line-height: 1; color: var(--ink);
+.brand__logo {
+  display: block;
+  width: auto;
+  height: 1.9rem;
 }
-.wordmark__q { color: var(--brand); }
-.wordmark--hero { font-size: clamp(2.4rem, 6vw, 3.6rem); }
 
 .nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
 .nav-toggle-btn {
@@ -156,25 +155,144 @@ a:hover { color: var(--ink); }
 .btn--soft:hover { background: #e2e7ee; color: var(--ink); }
 .btn--ghost { background: transparent; border-color: var(--border); color: var(--ink); }
 
-/* Home hero — light */
+/* Home hero — left copy centered + right carousel */
 .hero {
-  padding: 3.5rem 0 3rem;
+  padding: 2.75rem 0 3.25rem;
   background: linear-gradient(180deg, #f7f8fb 0%, #ffffff 100%);
 }
 .hero__grid {
-  display: grid; gap: 2rem; align-items: center;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
 }
 @media (min-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr 1.05fr; gap: 2.5rem; }
+  .hero__grid {
+    grid-template-columns: minmax(18rem, 1fr) minmax(20rem, 1.05fr);
+    gap: 2.5rem;
+  }
+}
+.hero__copy {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero__kicker {
-  margin: 0; font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 600; color: var(--ink);
+  margin: 0;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: var(--ink);
 }
-.hero__kicker--sub { margin: 0.25rem 0 1.25rem; color: var(--muted); font-weight: 500; }
-.hero__brand { margin: 0 0 1.5rem; }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.hero__visual img {
-  width: 100%; border-radius: 12px;
+.hero__kicker--sub {
+  margin: 0.35rem 0 1.1rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.hero__brand {
+  margin: 0.15rem 0 0.65rem;
+  max-width: min(100%, 28rem);
+}
+.hero__brand img {
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+.hero__kana {
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.12em;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+}
+@media (min-width: 900px) {
+  .carousel { margin-inline: 0 0; max-width: none; }
+}
+.carousel__viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.carousel__track {
+  position: relative;
+}
+.carousel__slide {
+  display: none;
+  margin: 0;
+}
+.carousel__slide.is-active {
+  display: block;
+  animation: fadeSlide 0.45s ease;
+}
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.carousel__controls {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+}
+.carousel__btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.92);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+.carousel__btn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+.carousel__btn--play {
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+}
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.carousel__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: #c9d0db;
+  cursor: pointer;
+}
+.carousel__dot.is-active {
+  background: var(--brand);
+}
+@keyframes fadeSlide {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
 }
 
 /* Page hero (service) — white/light */

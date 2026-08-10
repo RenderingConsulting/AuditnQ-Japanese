@@ -2,8 +2,7 @@
   <div class="wrap site-footer__inner">
     <div class="site-footer__brand">
       <a class="brand" href="{{ "/" | relURL }}">
-        <span class="wordmark" aria-hidden="true"><span>Auditn</span><span class="wordmark__q">Q</span></span>
-        <span class="visually-hidden">{{ .Site.Params.productName }}</span>
+        <img class="brand__logo" src="{{ "/images/brand/logo-sm.webp" | relURL }}" width="140" height="32" alt="{{ .Site.Params.productName }}">
       </a>
       <p>{{ .Site.Params.productName }}（オーディトン キュー）は、委託先/再委託先（Nth Party）を一元化、企業集中リスクや地域リスクを可視化して、サプライチェーン全体のリスク管理を実現する委託先管理システムです。</p>
     </div>
