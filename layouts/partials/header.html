@@ -5,11 +5,11 @@
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" autocomplete="off">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニュー">
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </label>
 
-    <nav class="nav" aria-label="メイン">
+    <nav class="nav" id="site-nav" aria-label="メイン">
       {{ range .Site.Menus.main }}
       <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}

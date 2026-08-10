@@ -1,30 +1,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{ $title := cond .IsHome (printf "%s｜%s" .Site.Title .Title) (printf "%s｜%s" .Site.Title .Title) }}
-{{ if .IsHome }}
-<title>{{ .Title }}</title>
-{{ else }}
-<title>{{ .Title }}｜{{ .Site.Title }}</title>
-{{ end }}
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ $desc := or .Description .Site.Params.description }}
+{{ $isArticle := and (not .IsHome) (not .IsSection) (in (slice "blog" "news") .Section) }}
+{{ $pageTitle := cond .IsHome .Title (printf "%s｜%s" .Title .Site.Title) }}
+{{ $ogImage := .Site.Params.ogImage }}
+{{ with .Params.coverLocal }}{{ $ogImage = . }}{{ else }}{{ with .Params.cover }}{{ $ogImage = . }}{{ end }}{{ end }}
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $desc }}">
 <link rel="canonical" href="{{ .Permalink }}">
-{{ if .Params.robots }}
-<meta name="robots" content="{{ .Params.robots }}">
+{{ with .Params.robots }}
+<meta name="robots" content="{{ . }}">
+{{ else if or (eq .RelPermalink "/404.html") (eq .RelPermalink "/404/") }}
+<meta name="robots" content="noindex, follow">
 {{ end }}
 
-<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="{{ if $isArticle }}article{{ else }}website{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}｜{{ .Site.Params.tagline }}">
-<meta property="og:title" content="{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }}｜{{ .Site.Title }}{{ end }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Site.Params.ogImage }}
+{{ with $ogImage }}
 <meta property="og:image" content="{{ . | absURL }}">
 {{ end }}
+{{ if $isArticle }}
+{{ with .Date }}<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
+{{ with .Lastmod }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">{{ end }}
+{{ end }}
+
 <meta name="twitter:card" content="summary_large_image">
-{{ with .Site.Params.ogImage }}
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $desc }}">
+{{ with $ogImage }}
 <meta name="twitter:image" content="{{ . | absURL }}">
 {{ end }}
 
+<meta name="theme-color" content="#286ee6">
 <link rel="icon" type="image/png" href="{{ .Site.Params.favicon | relURL }}">
 <link rel="apple-touch-icon" href="{{ .Site.Params.favicon | relURL }}">
 

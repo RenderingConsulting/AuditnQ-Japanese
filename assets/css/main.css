@@ -67,6 +67,18 @@ a:hover { color: var(--ink); }
 }
 .skip-link:focus { left: 0.5rem; top: 0.5rem; }
 
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+.btn:focus-visible,
+.pill:focus-visible,
+.nav a:focus-visible,
+.carousel__btn:focus-visible {
+  outline-offset: 2px;
+}
+
 .wrap { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
 .narrow { width: min(100% - 2rem, 44rem); }
 

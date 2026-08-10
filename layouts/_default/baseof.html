@@ -4,15 +4,19 @@
     {{ partial "head.html" . }}
   </head>
   <body>
+    {{ with .Site.Params.googleTagManager }}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+    {{ end }}
     <a class="skip-link" href="#main">本文へスキップ</a>
     <div class="site-shell">
       {{ partial "header.html" . }}
-      <main id="main">
+      <main id="main" tabindex="-1">
         {{ block "main" . }}{{ end }}
       </main>
       {{ partial "footer.html" . }}
     </div>
     {{ partial "analytics.html" . }}
+    <script src="{{ "/js/nav.js" | relURL }}" defer></script>
     {{ if .IsHome }}
     <script src="{{ "/js/carousel.js" | relURL }}" defer></script>
     {{ end }}

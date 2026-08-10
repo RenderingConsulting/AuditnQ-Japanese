@@ -10,13 +10,14 @@
     {{ if eq .Section "blog" }}
     <div class="blog-grid">
       {{ range .Pages }}
+      {{ $postTitle := .Title }}
       <a class="blog-card" href="{{ .RelPermalink }}">
         {{ with .Params.coverLocal }}
-        <img src="{{ . | relURL }}" alt="" width="640" height="336" loading="lazy">
-        {{ else }}{{ with .Params.cover }}<img src="{{ . }}" alt="" width="640" height="336" loading="lazy">{{ end }}{{ end }}
+        <img src="{{ . | relURL }}" alt="{{ $postTitle }}" width="640" height="336" loading="lazy">
+        {{ else }}{{ with .Params.cover }}<img src="{{ . }}" alt="{{ $postTitle }}" width="640" height="336" loading="lazy">{{ end }}{{ end }}
         <div class="blog-card__body">
           <span class="blog-card__tag">{{ with .Params.category }}{{ . }}{{ else }}記事掲載{{ end }}</span>
-          <h2>{{ .Title }}</h2>
+          <h2>{{ $postTitle }}</h2>
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
         </div>
       </a>

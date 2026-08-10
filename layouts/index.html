@@ -7,17 +7,17 @@
       <p class="hero__kicker">委託先/再委託先を一元管理して可視化</p>
       <p class="hero__kicker hero__kicker--sub">企業全体のサプライチェーンリスクを低減</p>
       <div class="hero__brand">
-        <img src="{{ "/images/brand/logo.webp" | relURL }}" width="480" height="108" alt="{{ .Site.Params.productName }}">
+        <img src="{{ "/images/brand/logo.webp" | relURL }}" width="480" height="108" alt="">
       </div>
-      <h1 class="hero__kana">{{ .Site.Params.productNameKana }}</h1>
+      <h1 class="hero__kana"><span class="visually-hidden">{{ .Site.Params.productName }} </span>{{ .Site.Params.productNameKana }}</h1>
       <div class="hero__actions">
         <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="material-icons btn__icon" aria-hidden="true">file_download</span></a>
         <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
       </div>
     </div>
 
-    <div class="carousel" data-carousel data-interval="5000">
-      <div class="carousel__viewport">
+    <div class="carousel" data-carousel data-interval="5000" aria-label="製品画面のスライドショー">
+      <div class="carousel__viewport" data-carousel-live>
         <div class="carousel__track">
           <figure class="carousel__slide is-active">
             <img src="{{ "/images/hero/carousel/01.webp" | relURL }}" alt="AuditnQの画面イメージ" width="1106" height="652">
@@ -64,7 +64,7 @@
           <p>{{ .body }}</p>
         </div>
         <div class="feature-row__media">
-          <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
+          <img src="{{ .image | relURL }}" alt="{{ .title }}" width="550" height="340" loading="lazy">
         </div>
       </article>
       {{ end }}
@@ -92,7 +92,7 @@
           <a class="function-card" href="{{ printf "/service/#%s" .id | relURL }}">
             <span class="function-card__num">{{ add $i 1 }}</span>
             {{ with .icon }}
-            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="160" height="148" loading="lazy">
+            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="160" height="148" loading="lazy" role="presentation">
             {{ end }}
             <h3>{{ .title }}</h3>
             <span class="function-card__more">Learn more<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></span>

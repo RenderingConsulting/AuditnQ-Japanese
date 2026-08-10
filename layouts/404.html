@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="section">
+  <div class="wrap narrow section-center">
+    <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>404</p>
+    <h1>ページが見つかりません</h1>
+    <p class="lede">お探しのページは移動または削除された可能性があります。</p>
+    <p class="section-cta">
+      <a class="btn btn--primary" href="{{ "/" | relURL }}">トップへ戻る</a>
+      <a class="btn btn--soft" href="{{ "/service/" | relURL }}">機能・サービス</a>
+    </p>
+  </div>
+</section>
+{{ end }}

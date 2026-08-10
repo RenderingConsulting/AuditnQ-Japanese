@@ -7,9 +7,10 @@
     <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time></p>
     {{ end }}
     {{ with .Params.coverLocal }}
-    <img class="article-cover" src="{{ . | relURL }}" alt="" width="960" height="504" loading="lazy">
+    {{ $cover := . }}
+    <img class="article-cover" src="{{ $cover | relURL }}" alt="{{ $.Title }}" width="960" height="504" loading="lazy">
     {{ else }}{{ with .Params.cover }}
-    <img class="article-cover" src="{{ . }}" alt="" width="960" height="504" loading="lazy">
+    <img class="article-cover" src="{{ . }}" alt="{{ $.Title }}" width="960" height="504" loading="lazy">
     {{ end }}{{ end }}
     {{ .Content }}
     {{ with .Params.noteURL }}

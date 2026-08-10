@@ -24,7 +24,7 @@
           <p>{{ .body }}</p>
         </div>
         <div class="timeline__media">
-          <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
+          <img src="{{ .image | relURL }}" alt="{{ .title }}" width="550" height="340" loading="lazy">
         </div>
       </article>
       {{ end }}
@@ -69,7 +69,7 @@
         {{ range $site.functions }}
         <article class="function-detail" id="{{ .id }}">
           {{ with .icon }}
-          <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="120" height="110" loading="lazy">
+          <img class="function-detail__icon" src="{{ . | relURL }}" alt="" width="120" height="110" loading="lazy" role="presentation">
           {{ end }}
           <div>
             <h3>{{ with .short }}{{ . }}{{ else }}{{ .title }}{{ end }}</h3>
@@ -112,15 +112,16 @@
     </header>
     <div class="blog-grid">
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      {{ $postTitle := .Title }}
       <a class="blog-card" href="{{ .RelPermalink }}">
         {{ with .Params.coverLocal }}
-        <img src="{{ . | relURL }}" alt="" width="640" height="336" loading="lazy">
+        <img src="{{ . | relURL }}" alt="{{ $postTitle }}" width="640" height="336" loading="lazy">
         {{ else }}
-          {{ with .Params.cover }}<img src="{{ . }}" alt="" width="640" height="336" loading="lazy">{{ end }}
+          {{ with .Params.cover }}<img src="{{ . }}" alt="{{ $postTitle }}" width="640" height="336" loading="lazy">{{ end }}
         {{ end }}
         <div class="blog-card__body">
           <span class="blog-card__tag">{{ with .Params.category }}{{ . }}{{ else }}記事掲載{{ end }}</span>
-          <h3>{{ .Title }}</h3>
+          <h3>{{ $postTitle }}</h3>
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
         </div>
       </a>

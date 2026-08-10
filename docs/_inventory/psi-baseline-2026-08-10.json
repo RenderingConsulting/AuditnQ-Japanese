@@ -1,0 +1,131 @@
+{
+  "url": "https://q.auditnqa.com/",
+  "measuredAt": "2026-08-10",
+  "timezone": "Asia/Tokyo",
+  "tool": "PageSpeed Insights",
+  "lighthouseVersion": "13.4.1",
+  "method": "median of 3 lab runs",
+  "fieldData": null,
+  "delivery": {
+    "server": "Google Frontend",
+    "cacheControl": "public, s-maxage=3, max-age=0",
+    "htmlBytesApprox": 15508,
+    "hasNuxtData": true,
+    "nuxtInnerTextLength": 0
+  },
+  "median": {
+    "mobile": {
+      "performance": 35,
+      "accessibility": 95,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpSeconds": 6.4,
+      "lcpSeconds": 14.5,
+      "tbtMs": 660,
+      "cls": 0.178,
+      "speedIndexSeconds": 6.4
+    },
+    "desktop": {
+      "performance": 58,
+      "accessibility": 95,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpSeconds": 1.2,
+      "lcpSeconds": 2.5,
+      "tbtMs": 540,
+      "cls": 0.002,
+      "speedIndexSeconds": 1.8
+    }
+  },
+  "runs": [
+    {
+      "id": "itp3e0aojy",
+      "createdAt": "2026-08-10T10:54:38+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/itp3e0aojy",
+      "mobile": {
+        "performance": 35,
+        "accessibility": 95,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 6.4,
+        "lcpSeconds": 14.5,
+        "tbtMs": 660,
+        "cls": 0.178,
+        "speedIndexSeconds": 6.4
+      },
+      "desktop": {
+        "performance": 52,
+        "accessibility": 95,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 1.2,
+        "lcpSeconds": 2.9,
+        "tbtMs": 640,
+        "cls": 0.002,
+        "speedIndexSeconds": 2.1
+      }
+    },
+    {
+      "id": "d756eiak83",
+      "createdAt": "2026-08-10T11:07:11+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/d756eiak83",
+      "mobile": {
+        "performance": 36,
+        "accessibility": 95,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 6.3,
+        "lcpSeconds": 14.6,
+        "tbtMs": 620,
+        "cls": 0.178,
+        "speedIndexSeconds": 6.3
+      },
+      "desktop": {
+        "performance": 58,
+        "accessibility": 95,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 1.2,
+        "lcpSeconds": 2.5,
+        "tbtMs": 540,
+        "cls": 0.002,
+        "speedIndexSeconds": 1.8
+      }
+    },
+    {
+      "id": "wa6a9jo935",
+      "createdAt": "2026-08-10T11:09:50+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/wa6a9jo935",
+      "notes": "Re-run with cache-bust query; same LP content",
+      "mobile": {
+        "performance": 31,
+        "accessibility": 95,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 6.4,
+        "lcpSeconds": 13.3,
+        "tbtMs": 900,
+        "cls": 0.178,
+        "speedIndexSeconds": 6.4
+      },
+      "desktop": {
+        "performance": 66,
+        "accessibility": 95,
+        "bestPractices": 77,
+        "seo": 100,
+        "fcpSeconds": 1.2,
+        "lcpSeconds": 2.5,
+        "tbtMs": 370,
+        "cls": 0.002,
+        "speedIndexSeconds": 1.6
+      }
+    }
+  ],
+  "excludedRuns": [
+    {
+      "id": "qp50impp91",
+      "createdAt": "2026-08-10T11:08:06+09:00",
+      "reason": "Identical metrics to d756eiak83; treated as non-independent"
+    }
+  ]
+}
