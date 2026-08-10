@@ -323,13 +323,23 @@ a:hover { color: var(--ink); }
 .more-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.15rem;
+  padding: 0.7rem 1.25rem 0.7rem 1.35rem;
+  border-radius: 999px;
+  background: #dfe7f3;
   color: var(--ink);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 0 rgba(38, 45, 79, 0.04);
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
 }
-.more-link:hover { color: var(--brand); }
+.more-link:hover {
+  background: #d0dbed;
+  color: var(--brand);
+  transform: translateY(-1px);
+}
 .more-link__icon {
   font-size: 1.35rem;
   line-height: 1;
@@ -360,11 +370,11 @@ a:hover { color: var(--ink); }
   .function-grid { grid-template-columns: repeat(3, 1fr); }
 }
 .function-card {
-  background: transparent;
+  background: #fff;
   border: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 1rem 0.75rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1.35rem 1.15rem 1.4rem;
   text-decoration: none;
   color: inherit;
   display: grid;
@@ -372,9 +382,12 @@ a:hover { color: var(--ink); }
   gap: 0.55rem;
   position: relative;
   min-height: 18rem;
-  transition: transform 160ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
-.function-card:hover { transform: translateY(-2px); }
+.function-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(38, 45, 79, 0.12);
+}
 .function-card__num {
   font-family: var(--font-en);
   font-weight: 400;
