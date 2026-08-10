@@ -15,9 +15,9 @@
       </main>
       {{ partial "footer.html" . }}
     </div>
-    <script src="{{ "/js/nav.js" | relURL }}" defer></script>
+    <script src="{{ printf "%s?v=%s" ("/js/nav.js" | relURL) (readFile "static/js/nav.js" | md5) }}" defer></script>
     {{ if .IsHome }}
-    <script src="{{ "/js/carousel.js" | relURL }}" defer></script>
+    <script src="{{ printf "%s?v=%s" ("/js/carousel.js" | relURL) (readFile "static/js/carousel.js" | md5) }}" defer></script>
     {{ end }}
   </body>
 </html>

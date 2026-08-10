@@ -14,6 +14,31 @@
   let playing = true;
   let timer = null;
 
+  // Naming attrs are prohibited on generic divs — ensure landmark roles.
+  root.setAttribute("role", "region");
+  if (!root.getAttribute("aria-label")) {
+    root.setAttribute("aria-label", "製品画面のスライドショー");
+  }
+  root.setAttribute("aria-roledescription", "carousel");
+  root.setAttribute("tabindex", "0");
+
+  if (dotsWrap) {
+    dotsWrap.setAttribute("role", "group");
+    if (!dotsWrap.getAttribute("aria-label")) {
+      dotsWrap.setAttribute("aria-label", "スライド選択");
+    }
+  }
+
+  live.setAttribute("aria-live", "polite");
+  live.removeAttribute("aria-label");
+  let status = live.querySelector("[data-carousel-status]");
+  if (!status) {
+    status = document.createElement("span");
+    status.className = "visually-hidden";
+    status.setAttribute("data-carousel-status", "");
+    live.prepend(status);
+  }
+
   const renderDots = () => {
     if (!dotsWrap) return;
     dotsWrap.innerHTML = "";
@@ -22,7 +47,7 @@
       btn.type = "button";
       btn.className = "carousel__dot" + (i === index ? " is-active" : "");
       btn.setAttribute("aria-label", `スライド ${i + 1}`);
-      btn.setAttribute("aria-current", i === index ? "true" : "false");
+      if (i === index) btn.setAttribute("aria-current", "true");
       btn.addEventListener("click", () => go(i));
       dotsWrap.appendChild(btn);
     });
@@ -33,10 +58,11 @@
     slides.forEach((slide, n) => {
       const active = n === index;
       slide.classList.toggle("is-active", active);
-      slide.setAttribute("aria-hidden", active ? "false" : "true");
+      if (active) slide.removeAttribute("aria-hidden");
+      else slide.setAttribute("aria-hidden", "true");
     });
     renderDots();
-    live.setAttribute("aria-label", `スライド ${index + 1} / ${slides.length}`);
+    status.textContent = `スライド ${index + 1} / ${slides.length}`;
   };
 
   const stop = () => {
@@ -89,10 +115,6 @@
   root.addEventListener("mouseleave", () => {
     if (playing) start();
   });
-
-  root.setAttribute("tabindex", "0");
-  root.setAttribute("aria-roledescription", "carousel");
-  live.setAttribute("aria-live", "polite");
 
   go(index);
 
