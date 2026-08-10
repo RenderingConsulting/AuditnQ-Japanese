@@ -2,3 +2,5 @@
 /blog/all/ /blog/ 301
 /service /service/ 301
 /index.html / 301
+/news/news /news/microsoft-for-startups/ 301
+/news/news/ /news/microsoft-for-startups/ 301

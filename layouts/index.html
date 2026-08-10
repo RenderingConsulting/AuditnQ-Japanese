@@ -4,8 +4,10 @@
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__copy">
-      <p class="hero__kicker">委託先/再委託先を一元管理して可視化</p>
-      <p class="hero__kicker hero__kicker--sub">企業全体のサプライチェーンリスクを低減</p>
+      <h1 class="hero__headline">
+        <span class="hero__kicker">委託先/再委託先を一元管理して可視化</span>
+        <span class="hero__kicker hero__kicker--sub">企業全体のサプライチェーンリスクを低減</span>
+      </h1>
       <div class="hero__brand">
         <img
           src="{{ "/images/brand/logo-sm.webp" | relURL }}"
@@ -17,7 +19,7 @@
           decoding="async"
         >
       </div>
-      <h1 class="hero__kana">{{ .Site.Params.productNameKana }}</h1>
+      <p class="hero__kana">{{ .Site.Params.productNameKana }}</p>
       <div class="hero__actions">
         <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="icon icon--download btn__icon" aria-hidden="true"></span></a>
         <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
