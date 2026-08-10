@@ -17,6 +17,9 @@ GitHub リポジトリ `RenderingConsulting/AuditnQ-Japanese` は作成済み想
 
 - [ ] `/` `/service/` `/blog/` `/news/` 文言・CTA 確認
 - [ ] Paperform / GTM / HubSpot 動作
-- [ ] `_redirects`（`/blog/all` → `/blog/`）
-- [ ] OGP / favicon / sitemap
+- [ ] `_redirects`（`/blog/all` → `/blog/`、`/index.html` → `/`）
+- [ ] OGP / favicon / sitemap（thanks ページが sitemap に含まれないこと）
+- [ ] `robots.txt`（thanks Disallow）と `_headers`（セキュリティヘッダ）
+- [ ] 404 ページ表示
+- [ ] キーボード操作（スキップリンク・ナビ・カルーセル・FAQ）
 - [ ] STUDIO 側バックアップ・編集凍結

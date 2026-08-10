@@ -19,8 +19,8 @@ canonifyURLs = false
   privacyURL = "https://ren-con.jp/privacy-policy-jp"
   ogImage = "/images/og-default.png"
   favicon = "/images/favicon.png"
-  logo = "/images/logo.svg"
-  logoWhite = "/images/logo-white.svg"
+  logo = "/images/brand/logo.webp"
+  logoWhite = "/images/brand/logo.webp"
   # Integrations (Phase 4 で有効化確認)
   googleAnalytics = "G-2Q1QNWF0R0"
   googleTagManager = "GTM-NPD8FMJS"

@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /dl-thanks/
+Disallow: /inquiry-thanks/
+Disallow: /webinar-thanks/
+
 Sitemap: https://q.auditnqa.com/sitemap.xml

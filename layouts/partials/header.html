@@ -1,19 +1,19 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="{{ "/" | relURL }}" aria-label="{{ .Site.Params.productName }} ホーム">
-      <span class="wordmark" aria-hidden="true"><span>Auditn</span><span class="wordmark__q">Q</span></span>
+      <img class="brand__logo" src="{{ "/images/brand/logo-sm.webp" | relURL }}" width="150" height="34" alt="{{ .Site.Params.productName }}">
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" autocomplete="off">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニュー">
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </label>
 
-    <nav class="nav" aria-label="メイン">
+    <nav class="nav" id="site-nav" aria-label="メイン">
       {{ range .Site.Menus.main }}
       <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}
-      <a class="btn btn--primary btn--sm" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
+      <a class="btn btn--primary btn--sm" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="material-icons btn__icon" aria-hidden="true">file_download</span></a>
       <a class="btn btn--cta btn--sm" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナー予約</a>
     </nav>
   </div>

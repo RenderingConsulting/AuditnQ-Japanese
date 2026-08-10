@@ -22,7 +22,7 @@
 | 4 | Paperform / GA / GTM / HubSpot | 予定 |
 | 5 | SEO・DNS カットオーバー | 予定 |
 
-詳細: `docs/phase0-inventory.md` / `docs/url-mapping.md` / `docs/design-tokens.md`
+詳細: `docs/phase0-inventory.md` / `docs/baseline-performance.md` / `docs/url-mapping.md` / `docs/design-tokens.md`
 
 ## ローカル
 

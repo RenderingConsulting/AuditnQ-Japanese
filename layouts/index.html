@@ -6,17 +6,36 @@
     <div class="hero__copy">
       <p class="hero__kicker">委託先/再委託先を一元管理して可視化</p>
       <p class="hero__kicker hero__kicker--sub">企業全体のサプライチェーンリスクを低減</p>
-      <h1 class="hero__brand">
-        <span class="wordmark wordmark--hero" aria-hidden="true"><span>Auditn</span><span class="wordmark__q">Q</span></span>
-        <span class="visually-hidden">{{ .Site.Params.productName }}（{{ .Site.Params.productNameKana }}）</span>
-      </h1>
+      <div class="hero__brand">
+        <img src="{{ "/images/brand/logo.webp" | relURL }}" width="480" height="108" alt="{{ .Site.Params.productName }}" decoding="async">
+      </div>
+      <h1 class="hero__kana">{{ .Site.Params.productNameKana }}</h1>
       <div class="hero__actions">
-        <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求</a>
+        <a class="btn btn--primary btn--lg" href="{{ .Site.Params.paperformDownload }}" rel="noopener noreferrer" target="_blank">資料請求<span class="material-icons btn__icon" aria-hidden="true">file_download</span></a>
         <a class="btn btn--cta btn--lg" href="{{ .Site.Params.paperformWebinar }}" rel="noopener noreferrer" target="_blank">ウェビナーに参加</a>
       </div>
     </div>
-    <div class="hero__visual">
-      <img src="{{ "/images/hero/laptop.webp" | relURL }}" alt="AuditnQの画面イメージ" width="1106" height="652">
+
+    <div class="carousel" data-carousel data-interval="5000" aria-label="製品画面のスライドショー">
+      <div class="carousel__viewport" data-carousel-live>
+        <div class="carousel__track">
+          <figure class="carousel__slide is-active">
+            <img src="{{ "/images/hero/carousel/01.webp" | relURL }}" alt="AuditnQの画面イメージ" width="1106" height="652">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="{{ "/images/hero/carousel/02.webp" | relURL }}" alt="地域集中分析の画面" width="1106" height="652" loading="lazy">
+          </figure>
+          <figure class="carousel__slide">
+            <img src="{{ "/images/hero/carousel/03.webp" | relURL }}" alt="AuditnQのダッシュボード" width="1106" height="652" loading="lazy">
+          </figure>
+        </div>
+        <div class="carousel__controls">
+          <button type="button" class="carousel__btn" data-carousel-prev aria-label="前のスライド">‹</button>
+          <button type="button" class="carousel__btn" data-carousel-next aria-label="次のスライド">›</button>
+          <button type="button" class="carousel__btn carousel__btn--play" data-carousel-toggle aria-label="自動再生を停止">❚❚</button>
+        </div>
+      </div>
+      <div class="carousel__dots" data-carousel-dots role="tablist" aria-label="スライド選択"></div>
     </div>
   </div>
 </section>
@@ -43,14 +62,16 @@
           <p class="feature__num">{{ .id }}</p>
           <h3>{{ .title }}</h3>
           <p>{{ .body }}</p>
-          <a class="btn btn--soft" href="{{ "/service/" | relURL }}">詳しくみる</a>
         </div>
         <div class="feature-row__media">
-          <img src="{{ .image | relURL }}" alt="" width="550" height="340" loading="lazy">
+          <img src="{{ .image | relURL }}" alt="{{ .title }}" width="550" height="340" loading="lazy">
         </div>
       </article>
       {{ end }}
     </div>
+    <p class="section-cta">
+      <a class="more-link" href="{{ "/service/" | relURL }}">詳しくみる<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
+    </p>
   </div>
 </section>
 
@@ -62,18 +83,19 @@
         <h2>機能一覧</h2>
         <p>課題解決を支援する豊富な機能</p>
       </div>
-      <a class="btn btn--soft" href="{{ "/service/#function" | relURL }}">一覧はこちら</a>
+      <a class="more-link" href="{{ "/service/#function" | relURL }}">詳しくみる<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></a>
     </header>
     <div class="function-grid">
       {{ range $i, $id := $site.home_functions }}
         {{ range $site.functions }}
           {{ if eq .id $id }}
           <a class="function-card" href="{{ printf "/service/#%s" .id | relURL }}">
-            {{ with .icon }}
-            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="120" height="110" loading="lazy">
-            {{ end }}
             <span class="function-card__num">{{ add $i 1 }}</span>
+            {{ with .icon }}
+            <img class="function-card__icon" src="{{ . | relURL }}" alt="" width="160" height="148" loading="lazy" role="presentation">
+            {{ end }}
             <h3>{{ .title }}</h3>
+            <span class="function-card__more">Learn more<span class="material-icons more-link__icon" aria-hidden="true">keyboard_arrow_right</span></span>
           </a>
           {{ end }}
         {{ end }}
