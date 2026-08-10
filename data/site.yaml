@@ -63,7 +63,7 @@ functions:
   - id: security
     number: 10
     title: "各種セキュリティ機能"
-    icon: "/images/functions/08.svg"
+    icon: "/images/functions/security.webp"
     body: "国内外の大企業での運用に耐え得るエンタープライズレベルのセキュリティ機能/ガバナンス機能を具備しています。またISMSは取得済みであり、SOC2 Type2取得の準備も進めています（2026年8月現在）"
 
 home_functions:
