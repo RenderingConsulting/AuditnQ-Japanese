@@ -1,0 +1,199 @@
+{
+  "url": "https://q.auditnqa.com/",
+  "host": "Cloudflare Pages (post HubSpot removal + GTM defer + font trim)",
+  "measuredAt": "2026-08-10",
+  "timezone": "Asia/Tokyo",
+  "window": "14:07–14:18 JST",
+  "tool": "PageSpeed Insights",
+  "lighthouseVersion": "13.4.1",
+  "method": "median of 3 successful paired lab runs (mobile+desktop both OK)",
+  "fieldData": null,
+  "changesSinceCutover": [
+    "Removed unused HubSpot embed",
+    "Deferred GTM until pointer/keyboard/touch (not scroll) or load+30s",
+    "Dropped Noto Sans JP Google Fonts; system JP stack + Red Hat Display only",
+    "Replaced Material Icons with CSS mask icons",
+    "Preload + fetchpriority=high on hero LCP image"
+  ],
+  "delivery": {
+    "server": "cloudflare",
+    "dnsCname": "auditnq-japanese.pages.dev",
+    "cacheControl": "public, max-age=0, must-revalidate",
+    "htmlBytesApprox": 25107,
+    "hasNuxtData": false,
+    "htmlContainsBodyCopy": true
+  },
+  "median": {
+    "mobile": {
+      "performance": 83,
+      "accessibility": 96,
+      "bestPractices": 88,
+      "seo": 100,
+      "fcpSeconds": 1.7,
+      "lcpSeconds": 2.4,
+      "tbtMs": 0,
+      "cls": 0.279,
+      "speedIndexSeconds": 1.7,
+      "agentBrowsing": "1/2"
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 92,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 0.7,
+      "lcpSeconds": 0.7,
+      "tbtMs": 0,
+      "cls": 0.004,
+      "speedIndexSeconds": 0.7,
+      "agentBrowsing": "2/2"
+    }
+  },
+  "runs": [
+    {
+      "id": "z6o4xaojcx",
+      "createdAt": "2026-08-10T14:07:37+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/z6o4xaojcx",
+      "mobile": {
+        "performance": 93,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 2.6,
+        "lcpSeconds": 2.7,
+        "tbtMs": 0,
+        "cls": 0.001,
+        "speedIndexSeconds": 2.6,
+        "agentBrowsing": "2/2"
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 0.4,
+        "lcpSeconds": 0.4,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexSeconds": 0.4,
+        "agentBrowsing": "2/2"
+      }
+    },
+    {
+      "id": "w1s6p0xsif",
+      "createdAt": "2026-08-10T14:18:10+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/w1s6p0xsif",
+      "mobile": {
+        "performance": 83,
+        "accessibility": 96,
+        "bestPractices": 88,
+        "seo": 100,
+        "fcpSeconds": 1.7,
+        "lcpSeconds": 2.4,
+        "tbtMs": 0,
+        "cls": 0.279,
+        "speedIndexSeconds": 1.7,
+        "agentBrowsing": "1/2"
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 0.7,
+        "lcpSeconds": 0.7,
+        "tbtMs": 0,
+        "cls": 0.004,
+        "speedIndexSeconds": 0.7,
+        "agentBrowsing": "2/2"
+      }
+    },
+    {
+      "id": "cuep5zqqcq",
+      "createdAt": "2026-08-10T14:18:38+09:00",
+      "reportBase": "https://pagespeed.web.dev/analysis/https-q-auditnqa-com/cuep5zqqcq",
+      "mobile": {
+        "performance": 83,
+        "accessibility": 96,
+        "bestPractices": 88,
+        "seo": 100,
+        "fcpSeconds": 1.7,
+        "lcpSeconds": 2.4,
+        "tbtMs": 0,
+        "cls": 0.279,
+        "speedIndexSeconds": 1.7,
+        "agentBrowsing": "1/2"
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 92,
+        "bestPractices": 96,
+        "seo": 100,
+        "fcpSeconds": 0.7,
+        "lcpSeconds": 0.7,
+        "tbtMs": 0,
+        "cls": 0.004,
+        "speedIndexSeconds": 0.7,
+        "agentBrowsing": "2/2"
+      }
+    }
+  ],
+  "excludedRuns": [
+    {
+      "id": "lqxofdgvxi",
+      "createdAt": "2026-08-10T14:09:21+09:00",
+      "reason": "Desktop NO_FCP; mobile-only kept as reference (Perf 93 / BP 96 / LCP 2.6s)"
+    },
+    {
+      "id": "ipl3th6o8a",
+      "createdAt": "2026-08-10T14:09:50+09:00",
+      "reason": "Desktop NO_FCP; mobile-only kept as reference (Perf 93 / BP 96 / LCP 2.6s)"
+    }
+  ],
+  "mobileLowClsReference": {
+    "note": "Mobile runs with CLS < 0.01 (includes unpaired). Shows stable side of lab variance.",
+    "ids": ["z6o4xaojcx", "lqxofdgvxi", "ipl3th6o8a"],
+    "median": {
+      "performance": 93,
+      "accessibility": 92,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 2.6,
+      "lcpSeconds": 2.6,
+      "tbtMs": 0,
+      "cls": 0.001,
+      "speedIndexSeconds": 2.6,
+      "agentBrowsing": "2/2"
+    }
+  },
+  "lighthouseCliSupplement": {
+    "tool": "Lighthouse CLI 12.8.2",
+    "method": "median of 3 simulate runs each",
+    "measuredAt": "2026-08-10T14:06–14:07+09:00",
+    "note": "PSI API quota exhausted; CLI used as local cross-check (not mixed into PSI medians).",
+    "median": {
+      "mobile": {
+        "performance": 98,
+        "accessibility": 92,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 1.7,
+        "lcpSeconds": 2.0,
+        "tbtMs": 0,
+        "cls": 0.001,
+        "speedIndexSeconds": 1.7
+      },
+      "desktop": {
+        "performance": 82,
+        "accessibility": 92,
+        "bestPractices": 100,
+        "seo": 100,
+        "fcpSeconds": 1.7,
+        "lcpSeconds": 2.0,
+        "tbtMs": 0,
+        "cls": 0.04,
+        "speedIndexSeconds": 1.7
+      }
+    }
+  }
+}
