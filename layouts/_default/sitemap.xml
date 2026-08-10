@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {{- range .Data.Pages }}
   {{- $robots := lower (string .Params.robots) }}
-  {{- if and (not (strings.Contains $robots "noindex")) (ne .Kind "taxonomy") (ne .Kind "term") }}
+  {{- if and (not .Sitemap.Disable) (not (strings.Contains $robots "noindex")) (ne .Kind "taxonomy") (ne .Kind "term") }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- with .Lastmod }}

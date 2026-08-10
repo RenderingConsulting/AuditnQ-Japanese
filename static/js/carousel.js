@@ -97,5 +97,15 @@
   live.setAttribute("aria-live", "polite");
 
   go(index);
-  start();
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduceMotion.matches) {
+    stop();
+  } else {
+    start();
+  }
+  reduceMotion.addEventListener("change", (e) => {
+    if (e.matches) stop();
+    else start();
+  });
 })();

@@ -10,8 +10,10 @@
 <link rel="canonical" href="{{ .Permalink }}">
 {{ with .Params.robots }}
 <meta name="robots" content="{{ . }}">
-{{ else if or (eq .RelPermalink "/404.html") (eq .RelPermalink "/404/") }}
+{{ else }}
+{{ if or (eq .RelPermalink "/404.html") (eq .RelPermalink "/404/") }}
 <meta name="robots" content="noindex, follow">
+{{ end }}
 {{ end }}
 
 <meta property="og:locale" content="ja_JP">
@@ -50,3 +52,4 @@
 {{ end }}
 
 {{ partial "schema.html" . }}
+{{ partial "analytics.html" . }}
