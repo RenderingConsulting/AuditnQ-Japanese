@@ -16,8 +16,8 @@
   --bg-muted: #f3f5f8;
   --surface: #ffffff;
   --border: #e3e6ec;
-  --font-en: "Red Hat Display", "Noto Sans JP", sans-serif;
-  --font-ja: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-en: "Red Hat Display", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
+  --font-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
   --max: 68rem;
   --radius: 14px;
   --shadow: 0 8px 28px rgba(38, 45, 79, 0.08);
