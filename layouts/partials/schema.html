@@ -43,7 +43,7 @@
   )
 }}
 {{ printf `<script type="application/ld+json">%s</script>` (dict "@context" "https://schema.org" "@graph" $graph | jsonify) | safeHTML }}
-{{ else if and (eq .Section "blog") .IsPage }}
+{{ else if and (eq .Section "blog") .IsPage (not (strings.Contains (lower (string .Params.robots)) "noindex")) }}
 {{ $post := dict
   "@context" "https://schema.org"
   "@type" "BlogPosting"
