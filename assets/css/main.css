@@ -712,6 +712,14 @@ a:hover { color: var(--ink); }
 }
 .meta { color: var(--muted); margin-top: -0.25rem; }
 .prose :where(p, ul, ol) { max-width: 42rem; }
+.prose img {
+  width: 100%;
+  max-width: 48rem;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 0.35rem 0 1.1rem;
+}
 
 /* Footer — logo + copy, then centered links + copyright */
 .site-footer {

@@ -1,4 +1,7 @@
 ---
 title: "Blog"
-description: "AuditnQに関するコラム・公式noteの紹介"
+description: "委託先管理の実務と、AuditnQでの回し方"
+robots: "noindex, follow"
+sitemap:
+  disable: true
 ---
