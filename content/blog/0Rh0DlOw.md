@@ -9,9 +9,6 @@ category: "記事掲載"
 cover: "https://storage.googleapis.com/studio-cms-assets/projects/Z9qpmy4zaP/s-1280x670_v-fms_webp_6b1f0b24-e39e-4695-921a-f3a18fec8f72.png"
 noteURL: "https://note.com/ren_con_com/n/ne8a30e609c74"
 noteButton: false
-robots: "noindex, follow"
-sitemap:
-  disable: true
 ---
 委託先管理とは、自社の業務や情報を預ける相手について、選定・契約・モニタリング・終了までリスクをコントロールする取り組みです。個人やSaaS、グループ会社を対象に含めるか、目的によってどこまで厳しく見るかなど様々な議論がありますが、公式note「**[【2026年最新】委託先管理とは？対象範囲はSaaSも含む？実務の基本と目的を解説](https://note.com/ren_con_com/n/ne8a30e609c74)**」にも詳細を記載しているので是非ご覧ください。このページでは定義などは繰り返さず、もうすこし具体的なポイントとして、現場で止まる箇所でどうするか、AuditnQでのExcelの質問票の活用方法などについて記載します。
 
